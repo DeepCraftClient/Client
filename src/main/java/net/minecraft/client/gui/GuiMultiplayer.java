@@ -27,13 +27,13 @@ public class GuiMultiplayer extends GuiScreen implements GuiYesNoCallback
     private boolean deletingServer;
     private boolean addingServer;
     private boolean editingServer;
-    private boolean directConnect;
+    public static boolean directConnect;
 
     /**
      * The text to be displayed when the player's cursor hovers over a server listing.
      */
     private String hoveringText;
-    private ServerData selectedServer;
+    public static ServerData selectedServer;
     private LanServerDetector.LanServerList lanServerList;
     private LanServerDetector.ThreadLanServerFind lanServerDetector;
     private boolean initialized;
