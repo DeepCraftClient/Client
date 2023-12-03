@@ -188,6 +188,8 @@ import org.lwjgl.opengl.OpenGLException;
 import org.lwjgl.opengl.PixelFormat;
 import org.lwjgl.util.glu.GLU;
 
+import static org.lwjgl.opengl.Display.setTitle;
+
 public class Minecraft implements IThreadListener, IPlayerUsage
 {
     private static final Logger logger = LogManager.getLogger();
@@ -473,14 +475,12 @@ public class Minecraft implements IThreadListener, IPlayerUsage
     /**
      * Starts the game: initializes the canvas, the title, the settings, etcetera.
      */
-    private void startGame() throws LWJGLException, IOException
-    {
+    private void startGame() throws LWJGLException, IOException {
         this.gameSettings = new GameSettings(this, this.mcDataDir);
         this.defaultResourcePacks.add(this.mcDefaultResourcePack);
         this.startTimerHackThread();
 
-        if (this.gameSettings.overrideHeight > 0 && this.gameSettings.overrideWidth > 0)
-        {
+        if (this.gameSettings.overrideHeight > 0 && this.gameSettings.overrideWidth > 0) {
             this.displayWidth = this.gameSettings.overrideWidth;
             this.displayHeight = this.gameSettings.overrideHeight;
         }
@@ -509,8 +509,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
         this.mcMusicTicker = new MusicTicker(this);
         this.fontRendererObj = new FontRenderer(this.gameSettings, new ResourceLocation("textures/font/ascii.png"), this.renderEngine, false);
 
-        if (this.gameSettings.forceUnicodeFont != null)
-        {
+        if (this.gameSettings.forceUnicodeFont != null) {
             this.fontRendererObj.setUnicodeFlag(this.isUnicode());
             this.fontRendererObj.setBidiFlag(this.mcLanguageManager.isCurrentLanguageBidirectional());
         }
@@ -520,16 +519,11 @@ public class Minecraft implements IThreadListener, IPlayerUsage
         this.mcResourceManager.registerReloadListener(this.standardGalacticFontRenderer);
         this.mcResourceManager.registerReloadListener(new GrassColorReloadListener());
         this.mcResourceManager.registerReloadListener(new FoliageColorReloadListener());
-        AchievementList.openInventory.setStatStringFormatter(new IStatStringFormat()
-        {
-            public String formatString(String str)
-            {
-                try
-                {
-                    return String.format(str, new Object[] {GameSettings.getKeyDisplayString(Minecraft.this.gameSettings.keyBindUseItem.getKeyCode())});
-                }
-                catch (Exception exception)
-                {
+        AchievementList.openInventory.setStatStringFormatter(new IStatStringFormat() {
+            public String formatString(String str) {
+                try {
+                    return String.format(str, new Object[]{GameSettings.getKeyDisplayString(Minecraft.this.gameSettings.keyBindUseItem.getKeyCode())});
+                } catch (Exception exception) {
                     return "Error: " + exception.getLocalizedMessage();
                 }
             }
@@ -571,12 +565,9 @@ public class Minecraft implements IThreadListener, IPlayerUsage
         this.checkGLError("Post startup");
         this.ingameGUI = new GuiIngame(this);
 
-        if (this.serverName != null)
-        {
+        if (this.serverName != null) {
             this.displayGuiScreen(new GuiConnecting(new MainMenu(), this, this.serverName, this.serverPort));
-        }
-        else
-        {
+        } else {
             this.displayGuiScreen(new MainMenu());
         }
 
@@ -584,22 +575,19 @@ public class Minecraft implements IThreadListener, IPlayerUsage
         this.mojangLogo = null;
         this.loadingScreen = new LoadingScreenRenderer(this);
 
-        if (this.gameSettings.fullScreen && !this.fullscreen)
-        {
+        if (this.gameSettings.fullScreen && !this.fullscreen) {
             this.toggleFullscreen();
         }
 
-        try
-        {
+        try {
             Display.setVSyncEnabled(this.gameSettings.enableVsync);
-        }
-        catch (OpenGLException var2)
-        {
+        } catch (OpenGLException var2) {
             this.gameSettings.enableVsync = false;
             this.gameSettings.saveOptions();
         }
 
         this.renderGlobal.makeEntityOutlineShader();
+        setTitle(DeepCraft.name + " " + DeepCraft.version);
         DeepCraft.start();
     }
 
@@ -628,7 +616,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
     private void createDisplay() throws LWJGLException
     {
         Display.setResizable(true);
-        Display.setTitle("Minecraft 1.8.9");
+        setTitle("DeepCraft > loading...");
 
         try
         {

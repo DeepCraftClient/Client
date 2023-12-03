@@ -11,10 +11,10 @@ public class MainMenu extends GuiScreen {
 
     @Override
     public void initGui() {
-        this.buttonList.add(new GuiButton(0, this.width / 2 - 100, this.height / 2 - 55, "Singleplayer"));
-        this.buttonList.add(new GuiButton(1, this.width / 2 - 100, this.height / 2 - 28, "Multiplayer"));
-        this.buttonList.add(new GuiButton(2, this.width / 2 - 100, this.height / 2 - 1, "Settings"));
-        this.buttonList.add(new GuiButton(3, this.width / 2 - 100, this.height / 2 + 28, "Exit Game"));
+        this.buttonList.add(new GuiButton(0, this.width / 2 - 100, this.height / 2 - 55, "OFFLINE"));
+        this.buttonList.add(new GuiButton(1, this.width / 2 - 100, this.height / 2 - 28, "ONLINE"));
+        this.buttonList.add(new GuiButton(2, this.width / 2 - 100, this.height / 2 - 1, "SETTINGS"));
+        this.buttonList.add(new GuiButton(3, this.width / 2 - 100, this.height / 2 + 28, "RAGE QUIT"));
 
 
         super.initGui();
