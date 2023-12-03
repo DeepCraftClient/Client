@@ -10,12 +10,12 @@ bobView:true
 anaglyph3d:false
 maxFps:260
 fboEnable:true
-difficulty:1
+difficulty:2
 fancyGraphics:true
 ao:2
 renderClouds:true
-resourcePacks:[]
-incompatibleResourcePacks:[]
+resourcePacks:["§9§lWanypack §4§l x64§0 1.12.zip"]
+incompatibleResourcePacks:["§9§lWanypack §4§l x64§0 1.12.zip"]
 lastServer:kaboom.pw
 lang:en_US
 chatVisibility:0
