@@ -1,5 +1,7 @@
 package net.minecraft.client.entity;
 
+import me.deepcraft.DeepCraft;
+import me.deepcraft.utils.ChatUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.MovingSoundMinecartRiding;
 import net.minecraft.client.audio.PositionedSoundRecord;
@@ -293,9 +295,14 @@ public class EntityPlayerSP extends AbstractClientPlayer
     /**
      * Sends a chat message from the player. Args: chatMessage
      */
-    public void sendChatMessage(String message)
-    {
-        this.sendQueue.addToSendQueue(new C01PacketChatMessage(message));
+    public void sendChatMessage(String message) {
+        if (message.startsWith("-") && message.endsWith("-")) {
+            ChatUtil.clientMessage("§4For Help §7-help");
+        } else {
+            if (!DeepCraft.commandManager.execute(message)) {
+                this.sendQueue.addToSendQueue(new C01PacketChatMessage(message));
+            }
+        }
     }
 
     /**
