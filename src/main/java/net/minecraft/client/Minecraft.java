@@ -35,6 +35,9 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.Executors;
 import java.util.concurrent.FutureTask;
 import javax.imageio.ImageIO;
+
+import me.deepcraft.DeepCraft;
+import me.deepcraft.gui.MainMenu;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.audio.MusicTicker;
@@ -570,11 +573,11 @@ public class Minecraft implements IThreadListener, IPlayerUsage
 
         if (this.serverName != null)
         {
-            this.displayGuiScreen(new GuiConnecting(new GuiMainMenu(), this, this.serverName, this.serverPort));
+            this.displayGuiScreen(new GuiConnecting(new MainMenu(), this, this.serverName, this.serverPort));
         }
         else
         {
-            this.displayGuiScreen(new GuiMainMenu());
+            this.displayGuiScreen(new MainMenu());
         }
 
         this.renderEngine.deleteTexture(this.mojangLogo);
@@ -597,6 +600,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
         }
 
         this.renderGlobal.makeEntityOutlineShader();
+        DeepCraft.start();
     }
 
     private void registerMetadataSerializers()
@@ -992,7 +996,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
 
         if (guiScreenIn == null && this.theWorld == null)
         {
-            guiScreenIn = new GuiMainMenu();
+            guiScreenIn = new MainMenu();
         }
         else if (guiScreenIn == null && this.thePlayer.getHealth() <= 0.0F)
         {
@@ -1443,6 +1447,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
      */
     public void shutdown()
     {
+        DeepCraft.stop();
         this.running = false;
     }
 

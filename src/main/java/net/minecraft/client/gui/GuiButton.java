@@ -1,10 +1,13 @@
 package net.minecraft.client.gui;
 
+import me.deepcraft.utils.ColorUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.PositionedSoundRecord;
 import net.minecraft.client.audio.SoundHandler;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.ResourceLocation;
+
+import java.awt.*;
 
 public class GuiButton extends Gui
 {
@@ -75,11 +78,11 @@ public class GuiButton extends Gui
     /**
      * Draws this button to the screen.
      */
+    public static me.deepcraft.utils.fontutil.FontRenderer fr = new me.deepcraft.utils.fontutil.FontRenderer("Arial", 21, Font.PLAIN, true, true);
     public void drawButton(Minecraft mc, int mouseX, int mouseY)
     {
         if (this.visible)
         {
-            FontRenderer fontrenderer = mc.fontRendererObj;
             mc.getTextureManager().bindTexture(buttonTextures);
             GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
             this.hovered = mouseX >= this.xPosition && mouseY >= this.yPosition && mouseX < this.xPosition + this.width && mouseY < this.yPosition + this.height;
@@ -87,21 +90,21 @@ public class GuiButton extends Gui
             GlStateManager.enableBlend();
             GlStateManager.tryBlendFuncSeparate(770, 771, 1, 0);
             GlStateManager.blendFunc(770, 771);
-            this.drawTexturedModalRect(this.xPosition, this.yPosition, 0, 46 + i * 20, this.width / 2, this.height);
-            this.drawTexturedModalRect(this.xPosition + this.width / 2, this.yPosition, 200 - this.width / 2, 46 + i * 20, this.width / 2, this.height);
+            Gui.drawRect(this.xPosition, this.yPosition, this.xPosition + this.width, this.yPosition + this.height, new Color(0,0,0,160).getRGB());
+
+            //this.drawTexturedModalRect(this.xPosition, this.yPosition, 0, 46 + i * 20, this.width / 2, this.height);
+            //this.drawTexturedModalRect(this.xPosition + this.width / 2, this.yPosition, 200 - this.width / 2, 46 + i * 20, this.width / 2, this.height);
             this.mouseDragged(mc, mouseX, mouseY);
             int j = 14737632;
-
             if (!this.enabled)
             {
                 j = 10526880;
             }
             else if (this.hovered)
             {
-                j = 16777120;
+                j = ColorUtil.rainBowEffect(2000000000L, 0.99F).getRGB();
             }
-
-            this.drawCenteredString(fontrenderer, this.displayString, this.xPosition + this.width / 2, this.yPosition + (this.height - 8) / 2, j);
+            fr.drawCenteredString(this.displayString, this.xPosition + this.width / 2, this.yPosition + (this.height - 8) / 2, j);
         }
     }
 
