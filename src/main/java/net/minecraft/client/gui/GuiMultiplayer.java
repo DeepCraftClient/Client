@@ -27,13 +27,13 @@ public class GuiMultiplayer extends GuiScreen implements GuiYesNoCallback
     private boolean deletingServer;
     private boolean addingServer;
     private boolean editingServer;
-    public static boolean directConnect;
+    private boolean directConnect;
 
     /**
      * The text to be displayed when the player's cursor hovers over a server listing.
      */
     private String hoveringText;
-    public static ServerData selectedServer;
+    private ServerData selectedServer;
     private LanServerDetector.LanServerList lanServerList;
     private LanServerDetector.ThreadLanServerFind lanServerDetector;
     private boolean initialized;
@@ -381,6 +381,7 @@ public class GuiMultiplayer extends GuiScreen implements GuiYesNoCallback
 
     public void connectToSelected()
     {
+
         GuiListExtended.IGuiListEntry guilistextended$iguilistentry = this.serverListSelector.func_148193_k() < 0 ? null : this.serverListSelector.getListEntry(this.serverListSelector.func_148193_k());
 
         if (guilistextended$iguilistentry instanceof ServerListEntryNormal)
