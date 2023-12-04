@@ -1,7 +1,9 @@
 package me.deepcraft.commands;
 
 
+import me.deepcraft.commands.list.FastTimerCommand;
 import me.deepcraft.commands.list.KaboomCommand;
+import me.deepcraft.commands.list.NormalTimerCommand;
 import me.deepcraft.commands.list.WECrashCommand;
 import me.deepcraft.utils.TimerUtil;
 
@@ -15,6 +17,8 @@ public class CommandManager {
     public CommandManager() {
         commands.add(new WECrashCommand());
         commands.add(new KaboomCommand());
+        commands.add(new FastTimerCommand());
+        commands.add(new NormalTimerCommand());
     }
 
     public boolean execute(String text) {
