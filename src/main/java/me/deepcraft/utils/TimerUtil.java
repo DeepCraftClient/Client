@@ -1,4 +1,4 @@
-package de.gamedevv.utils;
+package me.deepcraft.utils;
 
 public class TimerUtil {
 
