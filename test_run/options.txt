@@ -16,7 +16,7 @@ ao:2
 renderClouds:true
 resourcePacks:[]
 incompatibleResourcePacks:[]
-lastServer:lenni0451.net
+lastServer:mcslot.eu
 lang:en_US
 chatVisibility:0
 chatColors:true
