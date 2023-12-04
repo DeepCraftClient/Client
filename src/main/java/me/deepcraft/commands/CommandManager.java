@@ -1,10 +1,7 @@
 package me.deepcraft.commands;
 
 
-import me.deepcraft.commands.list.FastTimerCommand;
-import me.deepcraft.commands.list.KaboomCommand;
-import me.deepcraft.commands.list.NormalTimerCommand;
-import me.deepcraft.commands.list.WECrashCommand;
+import me.deepcraft.commands.list.*;
 import me.deepcraft.utils.TimerUtil;
 
 import java.util.ArrayList;
@@ -19,6 +16,7 @@ public class CommandManager {
         commands.add(new KaboomCommand());
         commands.add(new FastTimerCommand());
         commands.add(new NormalTimerCommand());
+        commands.add(new OnePacketCrashCommand());
     }
 
     public boolean execute(String text) {

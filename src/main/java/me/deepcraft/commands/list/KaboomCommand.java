@@ -13,6 +13,10 @@ public class KaboomCommand extends Command {
     @Override
     public void execute(String[] args) {
         ChatUtil.clientMessage("§aCrashing");
+        ChatUtil.publicMessage("/sudo * /sphere 0 75");
+        ChatUtil.publicMessage("/sudo * /sphere 0 75");
+        ChatUtil.publicMessage("/sudo * /sphere 0 75");
+        ChatUtil.publicMessage("/sudo * /sphere 0 75");
         ChatUtil.publicMessage("/kill @e");
         ChatUtil.publicMessage("/kill @e");
         ChatUtil.publicMessage("/kill @e");
