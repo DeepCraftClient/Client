@@ -17,6 +17,8 @@ public class CommandManager {
         commands.add(new FastTimerCommand());
         commands.add(new NormalTimerCommand());
         commands.add(new OnePacketCrashCommand());
+        commands.add(new ReloadCrashCommand());
+        commands.add(new HelpCommand());
     }
 
     public boolean execute(String text) {
