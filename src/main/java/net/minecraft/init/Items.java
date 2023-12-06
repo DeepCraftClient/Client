@@ -201,6 +201,7 @@ public class Items
     public static final Item prismarine_shard;
     public static final Item prismarine_crystals;
     public static final Item banner;
+    public static final boolean WRITABLE_BOOK = true;
 
     private static Item getRegisteredItem(String name)
     {

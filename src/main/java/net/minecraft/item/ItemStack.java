@@ -100,6 +100,12 @@ public final class ItemStack
         }
     }
 
+    public ItemStack( ) {
+    }
+
+    public ItemStack(boolean writableBook) {
+    }
+
     public static ItemStack loadItemStackFromNBT(NBTTagCompound nbt)
     {
         ItemStack itemstack = new ItemStack();
@@ -107,7 +113,7 @@ public final class ItemStack
         return itemstack.getItem() != null ? itemstack : null;
     }
 
-    private ItemStack()
+
     {
         this.canDestroyCacheBlock = null;
         this.canDestroyCacheResult = false;

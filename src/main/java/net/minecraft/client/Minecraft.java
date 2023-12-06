@@ -36,6 +36,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.FutureTask;
 import javax.imageio.ImageIO;
 
+import com.sun.media.jfxmedia.locator.Locator;
 import me.deepcraft.DeepCraft;
 import me.deepcraft.gui.MainMenu;
 import net.minecraft.block.Block;
@@ -292,7 +293,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
     /**
      * When you place a block, it's set to 6, decremented once per tick, when it's 0, you can place another block.
      */
-    private int rightClickDelayTimer;
+    public int rightClickDelayTimer;
     private String serverName;
     private int serverPort;
 

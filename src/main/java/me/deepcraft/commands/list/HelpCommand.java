@@ -13,11 +13,12 @@ public class HelpCommand  extends Command {
         ChatUtil.clientMessage("§6help");
         ChatUtil.clientMessage("§eCRASHER:");
         ChatUtil.clientMessage("§a-crashxd (onepacket)");
-        ChatUtil.clientMessage("§a-kaboom (kaboom crasher)");
         ChatUtil.clientMessage("§a-wecrash (worldedit crasher)");
         ChatUtil.clientMessage("§a-rlcrash (Reload Crasher)");
         ChatUtil.clientMessage("§eMODULE:");
         ChatUtil.clientMessage("§a-normaltimer (reset timer to 1x)");
         ChatUtil.clientMessage("§a-fasttimer (set your timer to 3x)");
+        ChatUtil.clientMessage("§eFUN:");
+        ChatUtil.clientMessage("§a-kaboom (Spammer modul to crash this server)");
     }
 }
