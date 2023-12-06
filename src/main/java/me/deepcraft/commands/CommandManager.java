@@ -14,8 +14,6 @@ public class CommandManager {
     public CommandManager() {
         commands.add(new WECrashCommand());
         commands.add(new KaboomCommand());
-        commands.add(new FastTimerCommand());
-        commands.add(new NormalTimerCommand());
         commands.add(new OnePacketCrashCommand());
         commands.add(new ReloadCrashCommand());
         commands.add(new HelpCommand());

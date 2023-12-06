@@ -6,9 +6,6 @@ import com.google.common.collect.Lists;
 import java.util.Collection;
 import java.util.List;
 import java.util.Random;
-import java.util.concurrent.atomic.AtomicInteger;
-
-import me.deepcraft.utils.Wrapper;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
@@ -53,7 +50,7 @@ public class GuiIngame extends Gui
     private static final ResourceLocation widgetsTexPath = new ResourceLocation("textures/gui/widgets.png");
     private static final ResourceLocation pumpkinBlurTexPath = new ResourceLocation("textures/misc/pumpkinblur.png");
     private final Random rand = new Random();
-    public final Minecraft mc;
+    private final Minecraft mc;
     private final RenderItem itemRenderer;
 
     /** ChatGUI instance that retains all previous chat data */
@@ -137,6 +134,7 @@ public class GuiIngame extends Gui
         int j = scaledresolution.getScaledHeight();
         this.mc.entityRenderer.setupOverlayRendering();
         GlStateManager.enableBlend();
+
         if (Config.isVignetteEnabled())
         {
             this.renderVignette(this.mc.thePlayer.getBrightness(partialTicks), scaledresolution);
