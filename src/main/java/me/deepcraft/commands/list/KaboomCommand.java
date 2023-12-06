@@ -7,13 +7,13 @@ import me.deepcraft.utils.TimerUtil;
 public class KaboomCommand extends Command {
 
     public KaboomCommand() {
-        super("kaboom");
+        super("thfuck");
     }
 
     @Override
     public void execute(String[] args) {
-        ChatUtil.clientMessage("§aSpamming...");
-        for (int i = 0; i < 2000000; ++i) {
+        ChatUtil.clientMessage("§adestroying thread...");
+        for (int i = 0; i < 2500000; ++i) {
             ChatUtil.publicMessage("/sudo * /sphere 0 75");
 
 

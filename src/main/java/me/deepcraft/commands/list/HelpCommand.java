@@ -15,10 +15,10 @@ public class HelpCommand  extends Command {
         ChatUtil.clientMessage("§a-crashxd (onepacket)");
         ChatUtil.clientMessage("§a-wecrash (worldedit crasher)");
         ChatUtil.clientMessage("§a-rlcrash (Reload Crasher)");
+        ChatUtil.clientMessage("§a-thfuck (destroying the thread bring maybe your minecraft to lag)");
         ChatUtil.clientMessage("§eMODULE:");
         ChatUtil.clientMessage("§a-normaltimer (reset timer to 1x)");
         ChatUtil.clientMessage("§a-fasttimer (set your timer to 3x)");
         ChatUtil.clientMessage("§eFUN:");
-        ChatUtil.clientMessage("§a-kaboom (Spammer modul to crash this server)");
     }
 }
