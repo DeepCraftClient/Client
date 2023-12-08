@@ -298,7 +298,7 @@ public class EntityPlayerSP extends AbstractClientPlayer
     public void sendChatMessage(String message) {
         if (message.startsWith("-") && message.endsWith("-")) {
             ChatUtil.clientMessage("§4For Help §7-help");
-        } if(message.startsWith("-")) {
+        } if(message.startsWith("-") && !DeepCraft.commandManager.execute(message)) {
             ChatUtil.clientMessage("§aUnknown §7Command §ause §7-help");
         }
         else {
