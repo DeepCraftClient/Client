@@ -1,6 +1,8 @@
 package net.minecraft.client.entity;
 
 import me.deepcraft.DeepCraft;
+import me.deepcraft.module.Module;
+import me.deepcraft.module.ModuleManager;
 import me.deepcraft.utils.ChatUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.MovingSoundMinecartRiding;
@@ -169,6 +171,7 @@ public class EntityPlayerSP extends AbstractClientPlayer
      */
     public void onUpdate()
     {
+        ModuleManager.getModules().stream().filter(module -> module.toggled).forEach(Module::onUpdate);
         if (this.worldObj.isBlockLoaded(new BlockPos(this.posX, 0.0D, this.posZ)))
         {
             super.onUpdate();
@@ -724,6 +727,7 @@ public class EntityPlayerSP extends AbstractClientPlayer
      */
     public void onLivingUpdate()
     {
+
         if (this.sprintingTicksLeft > 0)
         {
             --this.sprintingTicksLeft;

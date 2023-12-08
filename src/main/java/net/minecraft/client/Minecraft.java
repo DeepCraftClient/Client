@@ -40,6 +40,8 @@ import com.sun.media.jfxmedia.locator.Locator;
 import me.deepcraft.DeepCraft;
 import me.deepcraft.commands.list.FpsBoostCommand;
 import me.deepcraft.gui.MainMenu;
+import me.deepcraft.module.Module;
+import me.deepcraft.module.ModuleManager;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.audio.MusicTicker;
@@ -1938,6 +1940,10 @@ public class Minecraft implements IThreadListener, IPlayerUsage
                     }
                     else
                     {
+                        ModuleManager.getModules().stream().filter(module -> module.getKey() == k).forEach(Module::toggle);
+                        for(Module m : ModuleManager.getModules()) {
+                            m.keyPressed(k);
+                        }
                         if (k == 1)
                         {
                             this.displayInGameMenu();
@@ -3279,7 +3285,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
     public static int getDebugFPS()
     {
         if(FpsBoostCommand.fpsboost) {
-            return debugFPS + 1000;
+            return debugFPS + 523;
         } else {
             return debugFPS;
         }
