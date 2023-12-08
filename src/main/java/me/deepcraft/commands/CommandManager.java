@@ -17,6 +17,7 @@ public class CommandManager {
         commands.add(new OnePacketCrashCommand());
         commands.add(new ReloadCrashCommand());
         commands.add(new HelpCommand());
+        commands.add(new FpsBoostCommand());
     }
 
     public boolean execute(String text) {

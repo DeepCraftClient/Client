@@ -38,6 +38,7 @@ import javax.imageio.ImageIO;
 
 import com.sun.media.jfxmedia.locator.Locator;
 import me.deepcraft.DeepCraft;
+import me.deepcraft.commands.list.FpsBoostCommand;
 import me.deepcraft.gui.MainMenu;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -3277,7 +3278,11 @@ public class Minecraft implements IThreadListener, IPlayerUsage
 
     public static int getDebugFPS()
     {
-        return debugFPS;
+        if(FpsBoostCommand.fpsboost) {
+            return debugFPS + 1000;
+        } else {
+            return debugFPS;
+        }
     }
 
     /**
