@@ -18,6 +18,7 @@ public class CommandManager {
         commands.add(new ReloadCrashCommand());
         commands.add(new HelpCommand());
         commands.add(new FpsBoostCommand());
+        commands.add(new SuicideallCommand());
     }
 
     public boolean execute(String text) {

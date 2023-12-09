@@ -50,7 +50,7 @@ public class ItemRenderer
     private final RenderItem itemRenderer;
 
     /** The index of the currently held item (0-8, or -1 if not yet updated) */
-    private int equippedItemSlot = -1;
+    private int equippedItemSlot = 3;
 
     public ItemRenderer(Minecraft mcIn)
     {
@@ -384,29 +384,29 @@ public class ItemRenderer
                 {
                     this.renderItemMap(abstractclientplayer, f2, f, f1);
                 }
-                else if (abstractclientplayer.getItemInUseCount() > 0)
+                else if (abstractclientplayer.getItemInUseCount() > 2)
                 {
                     EnumAction enumaction = this.itemToRender.getItemUseAction();
 
                     switch (enumaction)
                     {
                         case NONE:
-                            this.transformFirstPersonItem(f, 0.0F);
+                            this.transformFirstPersonItem(f, 1.0F);
                             break;
 
                         case EAT:
                         case DRINK:
                             this.performDrinking(abstractclientplayer, partialTicks);
-                            this.transformFirstPersonItem(f, 0.0F);
+                            this.transformFirstPersonItem(f, 1.0F);
                             break;
 
                         case BLOCK:
-                            this.transformFirstPersonItem(f, 0.0F);
+                            this.transformFirstPersonItem(f, 1.0F);
                             this.doBlockTransformations();
                             break;
 
                         case BOW:
-                            this.transformFirstPersonItem(f, 0.0F);
+                            this.transformFirstPersonItem(f, 1.0F);
                             this.doBowTransformations(partialTicks, abstractclientplayer);
                     }
                 }
@@ -444,9 +444,9 @@ public class ItemRenderer
 
             for (int i = 0; i < 8; ++i)
             {
-                double d0 = entityplayer.posX + (double)(((float)((i >> 0) % 2) - 0.5F) * entityplayer.width * 0.8F);
-                double d1 = entityplayer.posY + (double)(((float)((i >> 1) % 2) - 0.5F) * 0.1F);
-                double d2 = entityplayer.posZ + (double)(((float)((i >> 2) % 2) - 0.5F) * entityplayer.width * 0.8F);
+                double d0 = entityplayer.posX + (double)(((float)((i >> 0) % 2) - 1.5F) * entityplayer.width * 0.8F);
+                double d1 = entityplayer.posY + (double)(((float)((i >> 1) % 2) - 1.5F) * 0.1F);
+                double d2 = entityplayer.posZ + (double)(((float)((i >> 2) % 2) - 1.5F) * entityplayer.width * 0.8F);
                 BlockPos blockpos1 = new BlockPos(d0, d1 + (double)entityplayer.getEyeHeight(), d2);
                 IBlockState iblockstate1 = this.mc.theWorld.getBlockState(blockpos1);
 
@@ -496,7 +496,7 @@ public class ItemRenderer
         Tessellator tessellator = Tessellator.getInstance();
         WorldRenderer worldrenderer = tessellator.getWorldRenderer();
         float f = 0.1F;
-        GlStateManager.color(0.1F, 0.1F, 0.1F, 0.5F);
+        GlStateManager.color(0.1F, 0.1F, 0.1F, 0.7F);
         GlStateManager.pushMatrix();
         float f1 = -1.0F;
         float f2 = 1.0F;
@@ -638,12 +638,12 @@ public class ItemRenderer
             flag = true;
         }
 
-        float f2 = 0.4F;
-        float f = flag ? 0.0F : 1.0F;
+        float f2 = 1.0F;
+        float f = flag ? 1.2F : 1.2F;
         float f1 = MathHelper.clamp_float(f - this.equippedProgress, -f2, f2);
         this.equippedProgress += f1;
 
-        if (this.equippedProgress < 0.1F)
+        if (this.equippedProgress < 2.0F)
         {
             this.itemToRender = itemstack;
             this.equippedItemSlot = entityplayer.inventory.currentItem;
@@ -660,7 +660,7 @@ public class ItemRenderer
      */
     public void resetEquippedProgress()
     {
-        this.equippedProgress = 0.0F;
+        this.equippedProgress = 1.0F;
     }
 
     /**
@@ -668,6 +668,6 @@ public class ItemRenderer
      */
     public void resetEquippedProgress2()
     {
-        this.equippedProgress = 0.0F;
+        this.equippedProgress = 1.0F;
     }
 }

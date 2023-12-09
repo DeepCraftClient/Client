@@ -17,6 +17,8 @@ public class HelpCommand  extends Command {
         ChatUtil.clientMessage("§a-rlcrash (Reload Crasher)");
         ChatUtil.clientMessage("§a-thfuck (destroying the thread bring maybe your minecraft to lag)");
         ChatUtil.clientMessage("§eMODULE:");
+        ChatUtil.clientMessage("§a-fpsboost (boost your FPS)");
         ChatUtil.clientMessage("§eFUN:");
+        ChatUtil.clientMessage("§a-killallplayers (bring all player to suicide XD");
     }
 }

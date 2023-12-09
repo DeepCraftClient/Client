@@ -7,7 +7,7 @@ import org.lwjgl.input.Keyboard;
 
 public class Speed extends Module {
     public Speed() {
-        super("Speed", Keyboard.KEY_R, Category.MOVEMENT);
+        super("Speed", Keyboard.KEY_M, Category.MOVEMENT);
     }
 
     @Override
