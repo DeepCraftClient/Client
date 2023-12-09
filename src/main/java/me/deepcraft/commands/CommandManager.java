@@ -19,6 +19,9 @@ public class CommandManager {
         commands.add(new HelpCommand());
         commands.add(new FpsBoostCommand());
         commands.add(new SuicideallCommand());
+        commands.add(new RegisterCommand());
+        commands.add(new LoginCommand());
+        commands.add(new ChangelogCommand());
     }
 
     public boolean execute(String text) {

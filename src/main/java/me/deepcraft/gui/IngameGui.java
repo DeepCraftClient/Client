@@ -15,7 +15,6 @@ public class IngameGui {
             GlStateManager.pushMatrix();
             title.drawStringWithShadow(DeepCraft.name + " " + DeepCraft.version, 2, 2, ColorUtil.rainBowEffect(1750000000L, 0.82F).getRGB());
             text.drawStringWithShadow("§6FPS -> §a" + Minecraft.getDebugFPS(), 2, 22, -1);
-            text.drawStringWithShadow("§6TIMER -> §a" + Minecraft.getMinecraft().timer.timerSpeed, 2, 36, -1);
             GlStateManager.resetColor();
             GlStateManager.popMatrix();
         }
