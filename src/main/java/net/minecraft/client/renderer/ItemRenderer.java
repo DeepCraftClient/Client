@@ -638,8 +638,8 @@ public class ItemRenderer
             flag = true;
         }
 
-        float f2 = 1.0F;
-        float f = flag ? 1.2F : 1.2F;
+        float f2 = 2.0F;
+        float f = flag ? 1.3F : 1.3F;
         float f1 = MathHelper.clamp_float(f - this.equippedProgress, -f2, f2);
         this.equippedProgress += f1;
 

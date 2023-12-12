@@ -17,6 +17,11 @@ public class ChangelogCommand extends Command {
         ChatUtil.clientMessage("§a✓ §rAddet Login Command");
         ChatUtil.clientMessage("§a✓ §rAddet Suicide all Player fun Command");
         ChatUtil.clientMessage("§a⁘ §rUpdated IngameGUI");
+        ChatUtil.clientMessage("§a✓ §rAddet Advertise CMD for live 2th channel");
+        ChatUtil.clientMessage("§8-----------------------------------------------------------------------------");
+        ChatUtil.clientMessage("⌈b6⌋");
+        ChatUtil.clientMessage("§a⁘ §rUpdated IngameGUI");
+        ChatUtil.clientMessage("§a✓ §rAddet XYZ, Brand, Ping, Protocol and more to IngameGUI");
         ChatUtil.clientMessage("          §7§m--§7§m--§a§m--§2§m--§7( §d§lChangelog §7)§2§m--§a§m--§7§m--§7§m--");
     }
 }

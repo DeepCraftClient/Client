@@ -22,6 +22,7 @@ public class HelpCommand  extends Command {
         ChatUtil.clientMessage("§a-log (login on Cracked server)");
         ChatUtil.clientMessage("§eFUN:");
         ChatUtil.clientMessage("§a-killallplayers (bring all player to suicide XD");
+        ChatUtil.clientMessage("§a-livead (Advertise for YT LIVE (2th channel))");
         ChatUtil.clientMessage("§eOTHER:");
         ChatUtil.clientMessage("§a-changelog");
     }
