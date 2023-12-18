@@ -10,6 +10,7 @@ public class YTLiveWerbungCommand extends Command {
 
     @Override
     public void execute(String[] args) {
+
         ChatUtil.publicMessage("Ich bin Live auf YouTube @UltimateGriefer");
     }
 }

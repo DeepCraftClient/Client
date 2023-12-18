@@ -23,6 +23,7 @@ public class CommandManager {
         commands.add(new LoginCommand());
         commands.add(new ChangelogCommand());
         commands.add(new YTLiveWerbungCommand());
+        commands.add(new EtoPCommand());
     }
 
     public boolean execute(String text) {

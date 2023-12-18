@@ -406,6 +406,10 @@ public class Minecraft implements IThreadListener, IPlayerUsage
         Bootstrap.register();
     }
 
+    public static Minecraft getInstance() {
+        return null;
+    }
+
     public void run()
     {
         this.running = true;
@@ -3324,5 +3328,9 @@ public class Minecraft implements IThreadListener, IPlayerUsage
     public void setConnectedToRealms(boolean isConnected)
     {
         this.connectedToRealms = isConnected;
+    }
+
+    public File getDirectory() {
+        return null;
     }
 }

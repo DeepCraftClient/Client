@@ -4,6 +4,9 @@ package me.deepcraft;
 import me.deepcraft.commands.CommandManager;
 import me.deepcraft.gui.IngameGui;
 import me.deepcraft.module.ModuleManager;
+import net.minecraft.client.Minecraft;
+
+import java.awt.*;
 
 public class DeepCraft {
     public static String PrevIp;
@@ -22,5 +25,9 @@ public class DeepCraft {
 
     public static void stop() {
 
+    }
+
+    public static Minecraft getInstance() {
+        return null;
     }
 }
