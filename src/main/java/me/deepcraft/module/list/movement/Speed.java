@@ -17,6 +17,11 @@ public class Speed extends Module {
 
     @Override
     public void onEnable() {
-        mc.timer.timerSpeed = 1.07F;
+        mc.timer.timerSpeed = 5.67F;
+    }
+
+    @Override
+    public void onDisable() {
+        mc.timer.timerSpeed = 1.0f;
     }
 }
