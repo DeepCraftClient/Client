@@ -2,12 +2,11 @@ package me.deepcraft.commands.list;
 
 import me.deepcraft.commands.Command;
 import me.deepcraft.utils.ChatUtil;
-import me.deepcraft.utils.TimerUtil;
 
 public class KaboomCommand extends Command {
 
     public KaboomCommand() {
-        super("thfuck");
+        super("wefun");
     }
 
     @Override

@@ -1,6 +1,7 @@
 package me.deepcraft.module;
 
 
+import me.deepcraft.module.list.movement.Fly;
 import me.deepcraft.module.list.movement.Speed;
 import me.deepcraft.module.list.movement.Sprint;
 
@@ -12,6 +13,7 @@ public class ModuleManager {
     public ModuleManager() {
         modules.add(new Speed());
         modules.add(new Sprint());
+        modules.add(new Fly());
     }
     public static List<Module> getModules() {
         return modules;

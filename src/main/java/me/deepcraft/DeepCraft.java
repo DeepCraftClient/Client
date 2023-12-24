@@ -6,13 +6,11 @@ import me.deepcraft.gui.IngameGui;
 import me.deepcraft.module.ModuleManager;
 import net.minecraft.client.Minecraft;
 
-import java.awt.*;
-
 public class DeepCraft {
     public static String PrevIp;
     public static int PrevPort;
     public static String name = "DeepCraft";
-    public static String version = "b6";
+    public static String version = "b8";
     public static String prefix = "§5§lDeep§d§lCraft§7» §r";
     public static ModuleManager moduleManager = new ModuleManager();
     public static CommandManager commandManager = new CommandManager();

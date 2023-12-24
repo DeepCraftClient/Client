@@ -15,7 +15,7 @@ public class HelpCommand  extends Command {
         ChatUtil.clientMessage("§a-crashxd (onepacket)");
         ChatUtil.clientMessage("§a-wecrash (worldedit crasher)");
         ChatUtil.clientMessage("§a-rlcrash (Reload Crasher)");
-        ChatUtil.clientMessage("§a-thfuck (destroying the thread bring maybe your §amc to lag)");
+        ChatUtil.clientMessage("§a-rlcrash2 (Reload Crasher for Paper/Purpur)");
         ChatUtil.clientMessage("§eMODULE:");
         ChatUtil.clientMessage("§a-fpsboost (boost your FPS)");
         ChatUtil.clientMessage("§a-reg (register on Cracked server)");
@@ -24,7 +24,9 @@ public class HelpCommand  extends Command {
         ChatUtil.clientMessage("§a-killallplayers (bring all player to suicide XD");
         ChatUtil.clientMessage("§a-livead (Advertise for YT LIVE (2th channel))");
         ChatUtil.clientMessage("§a-etop (teleport all Entities to you OP required)");
+        ChatUtil.clientMessage("§a-wefun (op & sudo command required)");
         ChatUtil.clientMessage("§eOTHER:");
         ChatUtil.clientMessage("§a-changelog");
+        ChatUtil.clientMessage("§a-credits");
     }
 }

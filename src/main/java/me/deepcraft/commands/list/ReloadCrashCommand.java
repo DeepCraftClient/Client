@@ -10,43 +10,9 @@ public class ReloadCrashCommand extends Command {
 
     @Override
     public void execute(String[] args) {
-        ChatUtil.clientMessage("§aCrashing...");
-        ChatUtil.publicMessage("/reload");
-        ChatUtil.publicMessage("/reload confirm");
-        ChatUtil.publicMessage("/reload");
-        ChatUtil.publicMessage("/reload confirm");
-        ChatUtil.publicMessage("/reload");
-        ChatUtil.publicMessage("/reload confirm");
-        ChatUtil.publicMessage("/reload");
-        ChatUtil.publicMessage("/reload confirm");
-        ChatUtil.publicMessage("/reload");
-        ChatUtil.publicMessage("/reload confirm");
-        ChatUtil.publicMessage("/reload");
-        ChatUtil.publicMessage("/reload confirm");
-        ChatUtil.publicMessage("/reload");
-        ChatUtil.publicMessage("/reload confirm");
-        ChatUtil.publicMessage("/reload");
-        ChatUtil.publicMessage("/reload confirm");
-        ChatUtil.publicMessage("/reload");
-        ChatUtil.publicMessage("/reload confirm");
-        ChatUtil.publicMessage("/reload");
-        ChatUtil.publicMessage("/reload confirm");
-        ChatUtil.publicMessage("/reload");
-        ChatUtil.publicMessage("/reload confirm");
-        ChatUtil.publicMessage("/reload");
-        ChatUtil.publicMessage("/reload confirm");
-        ChatUtil.publicMessage("/reload");
-        ChatUtil.publicMessage("/reload confirm");
-        ChatUtil.publicMessage("/reload");
-        ChatUtil.publicMessage("/reload confirm");
-        ChatUtil.publicMessage("/reload");
-        ChatUtil.publicMessage("/reload confirm");
-        ChatUtil.publicMessage("/reload");
-        ChatUtil.publicMessage("/reload confirm");
-        ChatUtil.publicMessage("/reload");
-        ChatUtil.publicMessage("/reload confirm");
-        ChatUtil.publicMessage("/reload");
-        ChatUtil.publicMessage("/reload confirm");
+        for (int i = 0; i < 20; i++) {
+            ChatUtil.publicMessage("/reload");
+        }
 
     }
 }

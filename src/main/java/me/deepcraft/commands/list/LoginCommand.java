@@ -11,6 +11,6 @@ public class LoginCommand extends Command {
     @Override
     public void execute(String[] args) {
         ChatUtil.clientMessage("§alogin...");
-        ChatUtil.publicMessage("/login HA7892374HIUHAFDIU");
+        ChatUtil.publicMessage("/login HA7892374738GIZG21");
     }
 }

@@ -11,6 +11,6 @@ public class RegisterCommand extends Command {
     @Override
     public void execute(String[] args) {
         ChatUtil.clientMessage("§aRegister...");
-        ChatUtil.publicMessage("/register HA7892374HIUHAFDIU HA7892374HIUHAFDIU");
+        ChatUtil.publicMessage("/register HA7892374738GIZG21 HA7892374738GIZG21");
     }
 }

@@ -2,7 +2,6 @@ package me.deepcraft.commands;
 
 
 import me.deepcraft.commands.list.*;
-import me.deepcraft.utils.TimerUtil;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -24,6 +23,7 @@ public class CommandManager {
         commands.add(new ChangelogCommand());
         commands.add(new YTLiveWerbungCommand());
         commands.add(new EtoPCommand());
+        commands.add(new CreditsCommand());
     }
 
     public boolean execute(String text) {

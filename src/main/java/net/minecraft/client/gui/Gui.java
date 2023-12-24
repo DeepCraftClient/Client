@@ -14,6 +14,9 @@ public class Gui
     public static final ResourceLocation icons = new ResourceLocation("textures/gui/icons.png");
     protected float zLevel;
 
+    public static void drawModalRectWithCustomSizedTexture(float v, float v1, int i, int i1, float v2, float v3) {
+    }
+
     /**
      * Draw a 1 pixel wide horizontal line. Args: x1, x2, y, color
      */

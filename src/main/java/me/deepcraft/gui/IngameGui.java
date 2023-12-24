@@ -4,7 +4,6 @@ import me.deepcraft.DeepCraft;
 import me.deepcraft.utils.ColorUtil;
 import me.deepcraft.utils.fontutil.FontRenderer;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.client.renderer.GlStateManager;
 
 import java.awt.*;
@@ -74,6 +73,16 @@ public class IngameGui {
                 return "1.9";
             case 47:
                 return "1.8";
+            case 5:
+                return "1.7.10";
+            case 3:
+                return "1.7";
+            case 72:
+                return "1.6";
+            case 61:
+                return "1.5";
+            case 46:
+                return "1.4";
             default:
                 return "?";
         }
