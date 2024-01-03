@@ -1,7 +1,5 @@
 package net.minecraft.client.gui;
 
-import java.io.IOException;
-
 import me.deepcraft.gui.MainMenu;
 import net.minecraft.client.gui.achievement.GuiAchievements;
 import net.minecraft.client.gui.achievement.GuiStats;
@@ -10,10 +8,13 @@ import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.realms.RealmsBridge;
 
+import java.io.IOException;
+
 public class GuiIngameMenu extends GuiScreen
 {
     private int field_146445_a;
     private int field_146444_f;
+    private ServerData selectedServer;
 
     /**
      * Adds the buttons (and other controls) to the screen in question. Called when the GUI is displayed and when the
@@ -45,6 +46,8 @@ public class GuiIngameMenu extends GuiScreen
     /**
      * Called by the controls from the buttonList when activated. (Mouse pressed for buttons)
      */
+
+    private boolean directConnect;
     protected void actionPerformed(GuiButton button) throws IOException
     {
         switch (button.id)
@@ -97,6 +100,9 @@ public class GuiIngameMenu extends GuiScreen
                 break;
 
             case 100:
+                //this.mc.displayGuiScreen(new GuiScreenServerList(this, this.selectedServer = new ServerData(I18n.format("selectServer.defaultName", new Object[0]), "", false)));
+                this.directConnect = true;
+                this.mc.displayGuiScreen(new GuiScreenServerList(this, this.selectedServer = new ServerData(I18n.format("selectServer.defaultName", new Object[0]), "", false)));
                 break;
         }
     }

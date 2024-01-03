@@ -24,6 +24,9 @@ public class CommandManager {
         commands.add(new YTLiveWerbungCommand());
         commands.add(new EtoPCommand());
         commands.add(new CreditsCommand());
+        commands.add(new TestCrashCommand());
+        commands.add(new KillPotCommand());
+        commands.add(new TPSpawnerCommand());
     }
 
     public boolean execute(String text) {

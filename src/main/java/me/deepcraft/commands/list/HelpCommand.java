@@ -20,9 +20,12 @@ public class HelpCommand  extends Command {
         ChatUtil.clientMessage("§a-fpsboost (boost your FPS)");
         ChatUtil.clientMessage("§a-reg (register on Cracked server)");
         ChatUtil.clientMessage("§a-log (login on Cracked server)");
+        ChatUtil.clientMessage("§eGRIEF AND TROLL TOOLS:");
+        ChatUtil.clientMessage("§a-killpot");
+        ChatUtil.clientMessage("§a-tpspawner (user) (x y z)");
         ChatUtil.clientMessage("§eFUN:");
         ChatUtil.clientMessage("§a-killallplayers (bring all player to suicide XD");
-        ChatUtil.clientMessage("§a-livead (Advertise for YT LIVE (2th channel))");
+        ChatUtil.clientMessage("§a-ad (durchlasten advertise)");
         ChatUtil.clientMessage("§a-etop (teleport all Entities to you OP required)");
         ChatUtil.clientMessage("§a-wefun (op & sudo command required)");
         ChatUtil.clientMessage("§eOTHER:");

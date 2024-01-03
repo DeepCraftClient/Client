@@ -15,6 +15,7 @@ public class MainMenu extends GuiScreen {
         this.buttonList.add(new GuiButton(1, this.width / 2 - 100, this.height / 2 - 28, "ONLINE"));
         this.buttonList.add(new GuiButton(2, this.width / 2 - 100, this.height / 2 - 1, "SETTINGS"));
         this.buttonList.add(new GuiButton(3, this.width / 2 - 100, this.height / 2 + 28, "RAGE QUIT"));
+        this.buttonList.add(new GuiButton(4, this.width / 2 - 100, 150, "DeepCraft"));
 
 
         super.initGui();
@@ -45,6 +46,9 @@ public class MainMenu extends GuiScreen {
         }
         if (button.id == 3) {
             mc.shutdown();
+        }
+        if (button.id == 4) {
+            mc.displayGuiScreen(new ClientOptions(this));
         }
 
         super.actionPerformed(button);

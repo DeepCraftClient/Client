@@ -29,6 +29,8 @@ public class ChangelogCommand extends Command {
         ChatUtil.clientMessage("§a✓ §7| §rAddet Credits");
         ChatUtil.clientMessage("⌈b8⌋");
         ChatUtil.clientMessage("§a✓ §7| §rAddet new Wallpaper + logo");
+        ChatUtil.clientMessage("⌈b9⌋");
+        ChatUtil.clientMessage("§a✓ §7| §rAddet Killpot command");
         ChatUtil.clientMessage("          §7§m--§7§m--§a§m--§2§m--§7( §d§lChangelog §7)§2§m--§a§m--§7§m--§7§m--");
     }
 }
