@@ -11,6 +11,7 @@ public class Module {
     private Category category;
 
     public Module(String name, int key, Category category) {
+        this.name = name;
         this.category = category;
         this.key = key;
         this.category = category;

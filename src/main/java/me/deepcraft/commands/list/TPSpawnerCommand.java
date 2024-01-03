@@ -44,13 +44,13 @@ public class TPSpawnerCommand extends Command {
     public void execute(String[] args) {
                 if (Minecraft.getMinecraft().playerController.isInCreativeMode()) {
                     try {
-                        double x = Double.parseDouble(args[3]);
-                        double y = Double.parseDouble(args[4]);
-                        double z = Double.parseDouble(args[5]);
-                        String owner = args[2];
+                        double x = Double.parseDouble(args[2]);
+                        double y = Double.parseDouble(args[3]);
+                        double z = Double.parseDouble(args[4]);
+                        String owner = args[1];
                         DeepCraft.giveItem(DeepCraft.AddToFurnance(CmdTeleportSpawner(owner, x, y, z), DeepCraft.MobSawner), DeepCraft.InventoryNormalSlot);
                     } catch (Exception e) {
-                        ChatUtil.clientMessage("§c§lBitte §c§lverwende §c§l#TpSpawner §c§l<Name> §c§l<x> §c§l<y> §c§l<z>");
+                        ChatUtil.clientMessage("§c§lBitte §c§lverwende §c§l-TpSpawner §c§l<Name> §c§l<x> §c§l<y> §c§l<z>");
                     }
                 } else {
                     ChatUtil.clientMessage(DeepCraft.CreativeError);

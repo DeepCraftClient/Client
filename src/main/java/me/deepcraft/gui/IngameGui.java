@@ -1,19 +1,26 @@
 package me.deepcraft.gui;
 
 import me.deepcraft.DeepCraft;
+import me.deepcraft.module.Module;
+import me.deepcraft.module.ModuleManager;
 import me.deepcraft.utils.ColorUtil;
 import me.deepcraft.utils.fontutil.FontRenderer;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.Gui;
+import net.minecraft.client.gui.GuiIngame;
+import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.renderer.GlStateManager;
 
 import java.awt.*;
 
-public class IngameGui {
 
-    protected Minecraft mc = Minecraft.getMinecraft();
+public class IngameGui{
+    public Minecraft mc = Minecraft.getMinecraft();
+    public ScaledResolution sr = new ScaledResolution(mc);
     public static FontRenderer title = new FontRenderer("Arial", 29, Font.PLAIN, true, true);
     public static FontRenderer text = new FontRenderer("Arial", 18, Font.PLAIN, true, true);
-        public void draw() {
+    public static FontRenderer arraylist = new FontRenderer("Arial", 22, Font.PLAIN, true, true);
+    public void draw() {
             GlStateManager.pushMatrix();
             title.drawStringWithShadow(DeepCraft.name + " " + DeepCraft.version, 2, 2, ColorUtil.rainBowEffect(1750000000L, 0.82F).getRGB());
             text.drawStringWithShadow("§5FPS: §c" + Minecraft.getDebugFPS(), 2, 45, -1);
@@ -25,6 +32,24 @@ public class IngameGui {
                 text.drawStringWithShadow("§5Ping: §a" + mc.getCurrentServerData().pingToServer, 2, 75, -1);
                 text.drawStringWithShadow("§5Protocol: §c" + getVersion(), 2, 85, -1);
             }
+        int count = 0;
+        int visibleModules = 0;
+
+        for (Module m : ModuleManager.getModules()) {
+            if (m.isToggled()) {
+                visibleModules++;
+            }
+        }
+
+        for (Module m : ModuleManager.getModules()) {
+            if (m.isToggled()) {
+                double offset = count*(arraylist.getHeight() + 6);
+                Gui.drawRect(sr.getScaledWidth() - arraylist.getStringWidth(m.getName()) - 10, (int) offset, sr.getScaledWidth() - arraylist.getStringWidth(m.getName()) - 8 , (int) (6 + arraylist.getHeight() + offset), new Color(58, 77, 224, 255).getRGB());
+                Gui.drawRect(sr.getScaledWidth() - arraylist.getStringWidth(m.getName()) - 8, (int) offset, sr.getScaledWidth(), (int) (6 + arraylist.getHeight() + offset), 0x65000000);
+                arraylist.drawStringWithShadow(m.getName(), (float) (sr.getScaledWidth() - arraylist.getStringWidth(m.getName()) - 1.5), (float) (4 + offset), ColorUtil.rainBowEffect(2000000000L, 0.95F).getRGB());
+                count++;
+            }
+        }
             GlStateManager.resetColor();
             GlStateManager.popMatrix();
         }
