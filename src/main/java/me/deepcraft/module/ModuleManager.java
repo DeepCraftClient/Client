@@ -1,6 +1,7 @@
 package me.deepcraft.module;
 
 
+import me.deepcraft.module.list.combat.KillAura;
 import me.deepcraft.module.list.movement.Fly;
 import me.deepcraft.module.list.movement.Speed;
 import me.deepcraft.module.list.movement.Sprint;
@@ -16,6 +17,7 @@ public class ModuleManager {
         modules.add(new Sprint());
         modules.add(new Fly());
         modules.add(new ClickGui());
+        modules.add(new KillAura());
     }
     public static List<Module> getModules() {
         return modules;

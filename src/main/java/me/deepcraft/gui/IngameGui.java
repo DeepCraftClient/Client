@@ -19,7 +19,7 @@ public class IngameGui{
     public ScaledResolution sr = new ScaledResolution(mc);
     public static FontRenderer title = new FontRenderer("Arial", 29, Font.PLAIN, true, true);
     public static FontRenderer text = new FontRenderer("Arial", 18, Font.PLAIN, true, true);
-    public static FontRenderer arraylist = new FontRenderer("Arial", 22, Font.PLAIN, true, true);
+    public static FontRenderer arraylist = new FontRenderer("Arial", 24, Font.PLAIN, true, true);
     public void draw() {
             GlStateManager.pushMatrix();
             title.drawStringWithShadow(DeepCraft.name + " " + DeepCraft.version, 2, 2, ColorUtil.rainBowEffect(1750000000L, 0.82F).getRGB());
@@ -33,20 +33,12 @@ public class IngameGui{
                 text.drawStringWithShadow("§5Protocol: §c" + getVersion(), 2, 85, -1);
             }
         int count = 0;
-        int visibleModules = 0;
-
-        for (Module m : ModuleManager.getModules()) {
-            if (m.isToggled()) {
-                visibleModules++;
-            }
-        }
-
         for (Module m : ModuleManager.getModules()) {
             if (m.isToggled()) {
                 double offset = count*(arraylist.getHeight() + 6);
                 Gui.drawRect(sr.getScaledWidth() - arraylist.getStringWidth(m.getName()) - 10, (int) offset, sr.getScaledWidth() - arraylist.getStringWidth(m.getName()) - 8 , (int) (6 + arraylist.getHeight() + offset), new Color(58, 77, 224, 255).getRGB());
                 Gui.drawRect(sr.getScaledWidth() - arraylist.getStringWidth(m.getName()) - 8, (int) offset, sr.getScaledWidth(), (int) (6 + arraylist.getHeight() + offset), 0x65000000);
-                arraylist.drawStringWithShadow(m.getName(), (float) (sr.getScaledWidth() - arraylist.getStringWidth(m.getName()) - 1.5), (float) (4 + offset), ColorUtil.rainBowEffect(2000000000L, 0.95F).getRGB());
+                arraylist.drawStringWithShadow(m.getName(), (float) (sr.getScaledWidth() - arraylist.getStringWidth(m.getName()) - 3.5), (float) (4 + offset), ColorUtil.rainBowEffect(2000000000L, 0.95F).getRGB());
                 count++;
             }
         }

@@ -1,0 +1,83 @@
+---- Minecraft Crash Report ----
+// Shall we play a game?
+
+Time: 04.01.24 13:35
+Description: Updating screen events
+
+java.lang.NullPointerException: Updating screen events
+	at net.minecraft.client.gui.GuiTextField.setText(GuiTextField.java:90)
+	at me.deepcraft.gui.NameIPSpoofer.initGui(NameIPSpoofer.java:36)
+	at net.minecraft.client.gui.GuiScreen.setWorldAndResolution(GuiScreen.java:556)
+	at net.minecraft.client.Minecraft.displayGuiScreen(Minecraft.java:943)
+	at me.deepcraft.gui.ClientOptions.actionPerformed(ClientOptions.java:64)
+	at net.minecraft.client.gui.GuiScreen.mouseClicked(GuiScreen.java:511)
+	at net.minecraft.client.gui.GuiScreen.handleMouseInput(GuiScreen.java:613)
+	at net.minecraft.client.gui.GuiScreen.handleInput(GuiScreen.java:582)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1724)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1047)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:366)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:22)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at net.minecraft.client.gui.GuiTextField.setText(GuiTextField.java:90)
+	at me.deepcraft.gui.NameIPSpoofer.initGui(NameIPSpoofer.java:36)
+	at net.minecraft.client.gui.GuiScreen.setWorldAndResolution(GuiScreen.java:556)
+	at net.minecraft.client.Minecraft.displayGuiScreen(Minecraft.java:943)
+	at me.deepcraft.gui.ClientOptions.actionPerformed(ClientOptions.java:64)
+	at net.minecraft.client.gui.GuiScreen.mouseClicked(GuiScreen.java:511)
+	at net.minecraft.client.gui.GuiScreen.handleMouseInput(GuiScreen.java:613)
+	at net.minecraft.client.gui.GuiScreen.handleInput(GuiScreen.java:582)
+
+-- Affected screen --
+Details:
+	Screen name: me.deepcraft.gui.NameIPSpoofer
+Stacktrace:
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1724)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1047)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:366)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:22)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.8.9
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_392, Amazon.com Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Amazon.com Inc.
+	Memory: 550893456 bytes (525 MB) / 825753600 bytes (787 MB) up to 3801088000 bytes (3625 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	Launched Version: MavenMCP
+	LWJGL: 2.9.4
+	OpenGL: AMD Radeon RX 6600 XT GL version 4.6.0 Compatibility Profile Context 22.20.27.09.230823, ATI Technologies Inc.
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: No
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	CPU: 16x AMD Ryzen 7 2700X Eight-Core Processor 
+	OptiFine Version: OptiFine_1.8.9_HD_U_M5
+	OptiFine Build: ~~NULL~~
+	Render Distance Chunks: 19
+	Mipmaps: 4
+	Anisotropic Filtering: 1
+	Antialiasing: 0
+	Multitexture: false
+	Shaders: null
+	OpenGlVersion: 4.6.0 Compatibility Profile Context 22.20.27.09.230823
+	OpenGlRenderer: AMD Radeon RX 6600 XT
+	OpenGlVendor: ATI Technologies Inc.
+	CpuCount: 16
