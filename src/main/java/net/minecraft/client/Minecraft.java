@@ -167,7 +167,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
     private Entity renderViewEntity;
     public Entity pointedEntity;
     public EffectRenderer effectRenderer;
-    public final Session session;
+    public Session session;
     private boolean isGamePaused;
 
     /** The font renderer used for displaying and measuring text */
@@ -296,6 +296,8 @@ public class Minecraft implements IThreadListener, IPlayerUsage
 
     /** Profiler currently displayed in the debug screen pie chart */
     private String debugProfilerName = "root";
+    private String fakeNick;
+    private String fakeIp;
 
     public Minecraft(GameConfiguration gameConfig)
     {
@@ -3257,5 +3259,24 @@ public class Minecraft implements IThreadListener, IPlayerUsage
 
     public File getDirectory() {
         return null;
+    }
+
+    public String getFakeIp() {
+        return this.fakeIp;
+    }
+
+    public String getFakeNick() {
+        return this.fakeNick;
+    }
+
+    public void setFakeIp(String fakeIp) {
+        this.fakeIp = fakeIp;
+    }
+
+    public void setFakeNick(String fakeNick) {
+        this.fakeNick = fakeNick;
+    }
+
+    public void setSession(Session copiedSession) {
     }
 }

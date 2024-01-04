@@ -1,6 +1,5 @@
 package me.deepcraft.gui;
 
-import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.renderer.GlStateManager;
@@ -29,7 +28,6 @@ public class ClientOptions extends GuiScreen {
     public void drawScreen(int mouseX, int mouseY, float partialTicks) {
         mc.getTextureManager().bindTexture(new ResourceLocation("deepcraft/co.png"));
         drawModalRectWithCustomSizedTexture(0, 0, 0, 0, this.width, this.height, this.width, this.height);
-        Gui.drawRect(this.width / 2 + 135, this.height / 2 - 80, this.width / 2 - 135, this.height / 2 + 70, new Color(0, 0, 0, 120).getRGB());
         GlStateManager.pushMatrix();
         GlStateManager.translate(-(width / 1.990f), -(height / 2f), 0);
         GlStateManager.scale(6, 6, 6);
@@ -38,7 +36,7 @@ public class ClientOptions extends GuiScreen {
     }
 
             private enum Components {
-                BUTTON_BACK, BUTTON_CREDITS, BUTTON_YOUTUBE, BUTTON_UPDATER;
+                BUTTON_BACK, BUTTON_CREDITS, BUTTON_YOUTUBE, BUTTON_UPDATER, BUTTON_CALTMANAGER, BUTTON_NAMEIPSPOOFER;
             }
 
             protected void actionPerformed (GuiButton button) throws IOException {
@@ -59,6 +57,12 @@ public class ClientOptions extends GuiScreen {
                     openWebsite("https://durchlasten.world/deepcraft/updater.exe");
                     return;
                 }
+                if (button.id == Components.BUTTON_CALTMANAGER.ordinal()) {
+                    mc.displayGuiScreen(new NameChanger(this));
+                }
+                if (button.id == Components.BUTTON_NAMEIPSPOOFER.ordinal()) {
+                    mc.displayGuiScreen(new NameIPSpoofer(this));
+                }
             }
 
             public void initGui () {
@@ -66,7 +70,8 @@ public class ClientOptions extends GuiScreen {
                 this.buttonList.add(new GuiButton(Components.BUTTON_CREDITS.ordinal(), this.width / 2 - 100, this.height / 2 - 28, "Credits"));
                 this.buttonList.add(new GuiButton(Components.BUTTON_YOUTUBE.ordinal(), this.width / 2 - 100, this.height / 2 - 1, "YouTube"));
                 this.buttonList.add(new GuiButton(Components.BUTTON_UPDATER.ordinal(), this.width / 2 - 100, this.height / 2 + 28, "Updater"));
-
+                this.buttonList.add(new GuiButton(Components.BUTTON_CALTMANAGER.ordinal(), this.width / 2 - 100, this.height / 2 + 55, "Cracked AltManager"));
+                this.buttonList.add(new GuiButton(Components.BUTTON_NAMEIPSPOOFER.ordinal(), this.width / 2 - 100, this.height / 2 + 82, "Name & IP Spoofer"));
 
     }
 

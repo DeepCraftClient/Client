@@ -1,5 +1,6 @@
 package net.minecraft.client.gui;
 
+import me.deepcraft.gui.ClientOptions;
 import me.deepcraft.gui.MainMenu;
 import net.minecraft.client.gui.achievement.GuiAchievements;
 import net.minecraft.client.gui.achievement.GuiStats;
@@ -36,7 +37,7 @@ public class GuiIngameMenu extends GuiScreen
         this.buttonList.add(new GuiButton(4, this.width / 2 - 100, this.height / 4 + 24 + i, I18n.format("menu.returnToGame", new Object[0])));
         this.buttonList.add(new GuiButton(0, this.width / 2 - 100, this.height / 4 + 96 + i, 98, 20, I18n.format("menu.options", new Object[0])));
         GuiButton guibutton;
-        this.buttonList.add(new GuiButton(100, this.width / 2 - 100, this.height / 4 + 72 + i, "Direct Connect"));
+        this.buttonList.add(new GuiButton(100, this.width / 2 - 100, this.height / 4 + 72 + i, "DeepCraft"));
         this.buttonList.add(guibutton = new GuiButton(7, this.width / 2 + 2, this.height / 4 + 96 + i, 98, 20, I18n.format("menu.shareToLan", new Object[0])));
         this.buttonList.add(new GuiButton(5, this.width / 2 - 100, this.height / 4 + 48 + i, 98, 20, I18n.format("gui.achievements", new Object[0])));
         this.buttonList.add(new GuiButton(6, this.width / 2 + 2, this.height / 4 + 48 + i, 98, 20, I18n.format("gui.stats", new Object[0])));
@@ -101,8 +102,7 @@ public class GuiIngameMenu extends GuiScreen
 
             case 100:
                 //this.mc.displayGuiScreen(new GuiScreenServerList(this, this.selectedServer = new ServerData(I18n.format("selectServer.defaultName", new Object[0]), "", false)));
-                this.directConnect = true;
-                this.mc.displayGuiScreen(new GuiScreenServerList(this, this.selectedServer = new ServerData(I18n.format("selectServer.defaultName", new Object[0]), "", false)));
+                mc.displayGuiScreen(new ClientOptions(this));
                 break;
         }
     }
