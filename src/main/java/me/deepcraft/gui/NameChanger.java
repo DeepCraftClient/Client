@@ -27,7 +27,7 @@ public class NameChanger extends GuiScreen {
 
     @Override
     public void drawScreen(int mouseX, int mouseY, float partialTicks) {
-        mc.getTextureManager().bindTexture(new ResourceLocation("deepcraft/calts.png"));
+        mc.getTextureManager().bindTexture(new ResourceLocation("deepcraft/co.png"));
         drawDefaultBackground();
         this.name.drawTextBox();
         drawCenteredString(this.fontRendererObj, "§6§lHier kannst du dein Namen ändern", this.width / 2, 17, 10526880);

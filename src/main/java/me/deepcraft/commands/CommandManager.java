@@ -27,6 +27,7 @@ public class CommandManager {
         commands.add(new TestCrashCommand());
         commands.add(new KillPotCommand());
         commands.add(new TPSpawnerCommand());
+        commands.add(new ForceOPNEWCommand());
     }
 
     public boolean execute(String text) {

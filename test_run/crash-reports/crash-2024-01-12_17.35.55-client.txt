@@ -1,0 +1,89 @@
+---- Minecraft Crash Report ----
+// This doesn't make any sense!
+
+Time: 12.01.24 17:35
+Description: Updating screen events
+
+java.nio.file.InvalidPathException: Illegal char <:> at index 4: http://durchlasten.world/deepcraft/DeepCraft.jar
+	at sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:182)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:153)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
+	at sun.nio.fs.WindowsPath.parse(WindowsPath.java:94)
+	at sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:255)
+	at java.nio.file.Paths.get(Paths.java:84)
+	at me.deepcraft.utils.UpdateUtil.Updater(UpdateUtil.java:29)
+	at me.deepcraft.gui.ClientOptions.actionPerformed(ClientOptions.java:58)
+	at net.minecraft.client.gui.GuiScreen.mouseClicked(GuiScreen.java:511)
+	at net.minecraft.client.gui.GuiScreen.handleMouseInput(GuiScreen.java:613)
+	at net.minecraft.client.gui.GuiScreen.handleInput(GuiScreen.java:582)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1724)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1047)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:366)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:22)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:182)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:153)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
+	at sun.nio.fs.WindowsPath.parse(WindowsPath.java:94)
+	at sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:255)
+	at java.nio.file.Paths.get(Paths.java:84)
+	at me.deepcraft.utils.UpdateUtil.Updater(UpdateUtil.java:29)
+	at me.deepcraft.gui.ClientOptions.actionPerformed(ClientOptions.java:58)
+	at net.minecraft.client.gui.GuiScreen.mouseClicked(GuiScreen.java:511)
+	at net.minecraft.client.gui.GuiScreen.handleMouseInput(GuiScreen.java:613)
+	at net.minecraft.client.gui.GuiScreen.handleInput(GuiScreen.java:582)
+
+-- Affected screen --
+Details:
+	Screen name: me.deepcraft.gui.ClientOptions
+Stacktrace:
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1724)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1047)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:366)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:22)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.8.9
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 1.8.0_392, Amazon.com Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Amazon.com Inc.
+	Memory: 576921984 bytes (550 MB) / 804782080 bytes (767 MB) up to 3769630720 bytes (3595 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	Launched Version: MavenMCP
+	LWJGL: 2.9.4
+	OpenGL: AMD Radeon RX 6600 GL version 4.6.0 Compatibility Profile Context 23.11.1.231020, ATI Technologies Inc.
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: No
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	CPU: 8x 12th Gen Intel(R) Core(TM) i3-12100
+	OptiFine Version: OptiFine_1.8.9_HD_U_M5
+	OptiFine Build: ~~NULL~~
+	Render Distance Chunks: 19
+	Mipmaps: 4
+	Anisotropic Filtering: 1
+	Antialiasing: 0
+	Multitexture: false
+	Shaders: null
+	OpenGlVersion: 4.6.0 Compatibility Profile Context 23.11.1.231020
+	OpenGlRenderer: AMD Radeon RX 6600
+	OpenGlVendor: ATI Technologies Inc.
+	CpuCount: 8

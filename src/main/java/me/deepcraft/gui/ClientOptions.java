@@ -1,5 +1,6 @@
 package me.deepcraft.gui;
 
+import me.deepcraft.utils.UpdateUtil;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.renderer.GlStateManager;
@@ -35,7 +36,7 @@ public class ClientOptions extends GuiScreen {
         super.drawScreen(mouseX, mouseY, partialTicks);
     }
 
-            private enum Components {
+            enum Components {
                 BUTTON_BACK, BUTTON_CREDITS, BUTTON_YOUTUBE, BUTTON_UPDATER, BUTTON_CALTMANAGER, BUTTON_NAMEIPSPOOFER;
             }
 
@@ -46,7 +47,7 @@ public class ClientOptions extends GuiScreen {
                 }
                 //if ...
                 if (button.id == Components.BUTTON_CREDITS.ordinal()) {
-                    openWebsite("https://durchlasten.world/deepcraft/credits.txt");
+                    this.mc.displayGuiScreen(new Credits());
                     return;
                 }
                 if (button.id == Components.BUTTON_YOUTUBE.ordinal()) {
@@ -54,14 +55,11 @@ public class ClientOptions extends GuiScreen {
                     return;
                 }
                 if (button.id == Components.BUTTON_UPDATER.ordinal()) {
-                    openWebsite("https://durchlasten.world/deepcraft/updater.exe");
-                    return;
+                    UpdateUtil.Updater();
                 }
+
                 if (button.id == Components.BUTTON_CALTMANAGER.ordinal()) {
                     mc.displayGuiScreen(new NameChanger(this));
-                }
-                if (button.id == Components.BUTTON_NAMEIPSPOOFER.ordinal()) {
-                    mc.displayGuiScreen(new NameIPSpoofer(this));
                 }
             }
 

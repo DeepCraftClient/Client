@@ -102,6 +102,7 @@ import org.lwjgl.opengl.*;
 import org.lwjgl.util.glu.GLU;
 
 import javax.imageio.ImageIO;
+import javax.security.auth.login.LoginException;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -410,7 +411,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
     /**
      * Starts the game: initializes the canvas, the title, the settings, etcetera.
      */
-    private void startGame() throws LWJGLException, IOException {
+    private void startGame() throws LWJGLException, IOException, LoginException {
         this.gameSettings = new GameSettings(this, this.mcDataDir);
         this.defaultResourcePacks.add(this.mcDefaultResourcePack);
         this.startTimerHackThread();
