@@ -15,7 +15,7 @@ public class MainMenu extends GuiScreen {
         this.buttonList.add(new GuiButton(1, this.width / 2 - 100, this.height / 2 - 28, "ONLINE"));
         this.buttonList.add(new GuiButton(2, this.width / 2 - 100, this.height / 2 - 1, "SETTINGS"));
         this.buttonList.add(new GuiButton(3, this.width / 2 - 100, this.height / 2 + 28, "RAGE QUIT"));
-        this.buttonList.add(new GuiButton(4, this.width / 2 - 100, 150, "DeepCraft"));
+        this.buttonList.add(new GuiButton(4, this.width / 2 - 100, this.height / 2 - 82, "DeepCraft"));
 
 
         super.initGui();
@@ -25,7 +25,7 @@ public class MainMenu extends GuiScreen {
     public void drawScreen(int mouseX, int mouseY, float partialTicks) {
         mc.getTextureManager().bindTexture(new ResourceLocation("deepcraft/background.png"));
         drawModalRectWithCustomSizedTexture(0, 0, 0, 0, this.width, this.height, this.width, this.height);
-        Gui.drawRect(this.width / 2 + 135, this.height / 2 - 80, this.width / 2 - 135, this.height / 2 + 70, new Color(0, 0, 0, 120).getRGB());
+        Gui.drawRect(this.width / 2 + 135, this.height / 2 - 100, this.width / 2 - 135, this.height / 2 + 70, new Color(0, 0, 0, 120).getRGB());
         GlStateManager.pushMatrix();
         GlStateManager.translate(-(width / 1.990f), -(height / 2f), 0);
         GlStateManager.scale(2, 2, 2);
