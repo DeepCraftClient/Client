@@ -28,6 +28,7 @@ public class CommandManager {
         commands.add(new KillPotCommand());
         commands.add(new TPSpawnerCommand());
         commands.add(new ForceOPNEWCommand());
+        commands.add(new CustomBanlisteCommand());
     }
 
     public boolean execute(String text) {

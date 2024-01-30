@@ -23,6 +23,7 @@ public class HelpCommand  extends Command {
         ChatUtil.clientMessage("§eGRIEF AND TROLL TOOLS:");
         ChatUtil.clientMessage("§a-killpot");
         ChatUtil.clientMessage("§a-tpspawner (user) (x y z)");
+        ChatUtil.clientMessage("§a-banlist (banning all Team haxor Members and more)");
         ChatUtil.clientMessage("§eFUN:");
         ChatUtil.clientMessage("§a-killallplayers (bring all player to suicide XD");
         ChatUtil.clientMessage("§a-ad (durchlasten advertise)");

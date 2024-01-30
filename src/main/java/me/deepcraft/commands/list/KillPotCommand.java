@@ -3,6 +3,7 @@ package me.deepcraft.commands.list;
 import me.deepcraft.DeepCraft;
 import me.deepcraft.commands.Command;
 import me.deepcraft.utils.ChatUtil;
+import me.deepcraft.utils.OtherUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -31,9 +32,9 @@ public class KillPotCommand extends Command {
             list.appendTag(effect);
             base.setTag("CustomPotionEffects", list);
             itm.setTagCompound(base);
-            DeepCraft.giveItem(itm, DeepCraft.InventoryNormalSlot);
+            OtherUtils.giveItem(itm, DeepCraft.InventoryNormalSlot);
         } else {
-            ChatUtil.clientMessage(DeepCraft.CreativeError);
+            ChatUtil.clientMessage(OtherUtils.CreativeError);
         }
     }
 }

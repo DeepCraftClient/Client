@@ -7,7 +7,7 @@ public class LoginUtil {
 
     public static void login() throws LoginException {
 
-        String pw = "123123";
+        String pw = "1337";
 
 
         String eingegebenesPasswort = JOptionPane.showInputDialog(null, "Passwort:");
@@ -17,7 +17,6 @@ public class LoginUtil {
         } else {
 
             JOptionPane.showMessageDialog(null, "Falsches Passwort oder Vorgang abgebrochen. Das Spiel wird nicht gestartet.");
-            DiscordFailedUtils.webhook();
             System.exit(1337);
 
         }

@@ -1,8 +1,8 @@
 package me.deepcraft.commands.list;
 
-import me.deepcraft.DeepCraft;
 import me.deepcraft.commands.Command;
 import me.deepcraft.utils.ChatUtil;
+import me.deepcraft.utils.OtherUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
@@ -48,12 +48,12 @@ public class TPSpawnerCommand extends Command {
                         double y = Double.parseDouble(args[3]);
                         double z = Double.parseDouble(args[4]);
                         String owner = args[1];
-                        DeepCraft.giveItem(DeepCraft.AddToFurnance(CmdTeleportSpawner(owner, x, y, z), DeepCraft.MobSawner), DeepCraft.InventoryNormalSlot);
+                        OtherUtils.giveItem(OtherUtils.AddToFurnance(CmdTeleportSpawner(owner, x, y, z), OtherUtils.MobSawner), OtherUtils.InventoryNormalSlot);
                     } catch (Exception e) {
                         ChatUtil.clientMessage("§c§lBitte §c§lverwende §c§l-TpSpawner §c§l<Name> §c§l<x> §c§l<y> §c§l<z>");
                     }
                 } else {
-                    ChatUtil.clientMessage(DeepCraft.CreativeError);
+                    ChatUtil.clientMessage(OtherUtils.CreativeError);
                 }
             }
     }

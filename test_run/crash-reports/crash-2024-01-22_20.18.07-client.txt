@@ -1,0 +1,130 @@
+---- Minecraft Crash Report ----
+// Uh... Did I do that?
+
+Time: 22.01.24 20:18
+Description: Rendering Block Entity
+
+com.google.common.util.concurrent.UncheckedExecutionException: java.lang.NullPointerException
+	at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2201)
+	at com.google.common.cache.LocalCache.get(LocalCache.java:3934)
+	at com.google.common.cache.LocalCache.getOrLoad(LocalCache.java:3938)
+	at com.google.common.cache.LocalCache$LocalLoadingCache.get(LocalCache.java:4821)
+	at com.google.common.cache.LocalCache$LocalLoadingCache.getUnchecked(LocalCache.java:4827)
+	at net.minecraft.client.resources.SkinManager.loadSkinFromCache(SkinManager.java:152)
+	at net.minecraft.client.renderer.tileentity.TileEntitySkullRenderer.renderSkull(TileEntitySkullRenderer.java:80)
+	at net.minecraft.client.renderer.tileentity.TileEntitySkullRenderer.renderTileEntityAt(TileEntitySkullRenderer.java:33)
+	at net.minecraft.client.renderer.tileentity.TileEntitySkullRenderer.renderTileEntityAt(TileEntitySkullRenderer.java:20)
+	at net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher.renderTileEntityAt(TileEntityRendererDispatcher.java:187)
+	at net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher.renderTileEntity(TileEntityRendererDispatcher.java:147)
+	at net.minecraft.client.renderer.RenderGlobal.renderEntities(RenderGlobal.java:904)
+	at net.minecraft.client.renderer.EntityRenderer.renderWorldPass(EntityRenderer.java:1733)
+	at net.minecraft.client.renderer.EntityRenderer.renderWorld(EntityRenderer.java:1542)
+	at net.minecraft.client.renderer.EntityRenderer.updateCameraAndRender(EntityRenderer.java:1334)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1074)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:367)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:22)
+Caused by: java.lang.NullPointerException
+	at com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.isWhitelistedDomain(YggdrasilMinecraftSessionService.java:210)
+	at com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.getTextures(YggdrasilMinecraftSessionService.java:149)
+	at net.minecraft.client.resources.SkinManager$1.load(SkinManager.java:44)
+	at net.minecraft.client.resources.SkinManager$1.load(SkinManager.java:41)
+	at com.google.common.cache.LocalCache$LoadingValueReference.loadFuture(LocalCache.java:3524)
+	at com.google.common.cache.LocalCache$Segment.loadSync(LocalCache.java:2317)
+	at com.google.common.cache.LocalCache$Segment.lockedGetOrLoad(LocalCache.java:2280)
+	at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2195)
+	... 18 more
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2201)
+	at com.google.common.cache.LocalCache.get(LocalCache.java:3934)
+	at com.google.common.cache.LocalCache.getOrLoad(LocalCache.java:3938)
+	at com.google.common.cache.LocalCache$LocalLoadingCache.get(LocalCache.java:4821)
+	at com.google.common.cache.LocalCache$LocalLoadingCache.getUnchecked(LocalCache.java:4827)
+	at net.minecraft.client.resources.SkinManager.loadSkinFromCache(SkinManager.java:152)
+	at net.minecraft.client.renderer.tileentity.TileEntitySkullRenderer.renderSkull(TileEntitySkullRenderer.java:80)
+	at net.minecraft.client.renderer.tileentity.TileEntitySkullRenderer.renderTileEntityAt(TileEntitySkullRenderer.java:33)
+	at net.minecraft.client.renderer.tileentity.TileEntitySkullRenderer.renderTileEntityAt(TileEntitySkullRenderer.java:20)
+
+-- Block Entity Details --
+Details:
+	Name: Skull // net.minecraft.tileentity.TileEntitySkull
+	Block type: ID #144 (tile.skull // net.minecraft.block.BlockSkull)
+	Block data value: 1 / 0x1 / 0b0001
+	Block location: World: (-1160,4,-607), Chunk: (at 8,0,1 in -73,-38; contains blocks -1168,0,-608 to -1153,255,-593), Region: (-3,-2; contains chunks -96,-64 to -65,-33, blocks -1536,0,-1024 to -1025,255,-513)
+	Actual block type: ID #144 (tile.skull // net.minecraft.block.BlockSkull)
+	Actual block data value: 1 / 0x1 / 0b0001
+Stacktrace:
+	at net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher.renderTileEntityAt(TileEntityRendererDispatcher.java:187)
+	at net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher.renderTileEntity(TileEntityRendererDispatcher.java:147)
+	at net.minecraft.client.renderer.RenderGlobal.renderEntities(RenderGlobal.java:904)
+	at net.minecraft.client.renderer.EntityRenderer.renderWorldPass(EntityRenderer.java:1733)
+	at net.minecraft.client.renderer.EntityRenderer.renderWorld(EntityRenderer.java:1542)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityPlayerSP['AkotoWeedz'/762811, l='MpServer', x=-1169,66, y=65,39, z=-618,04]]
+	Chunk stats: MultiplayerChunkCache: 441, 441
+	Level seed: 0
+	Level generator: ID 01 - flat, ver 0. Features enabled: false
+	Level generator options: 
+	Level spawn location: -1183,00,4,00,-1886,00 - World: (-1183,4,-1886), Chunk: (at 1,0,2 in -74,-118; contains blocks -1184,0,-1888 to -1169,255,-1873), Region: (-3,-4; contains chunks -96,-128 to -65,-97, blocks -1536,0,-2048 to -1025,255,-1537)
+	Level time: 125317 game time, 362604 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: false
+	Forced entities: 1 total; [EntityPlayerSP['AkotoWeedz'/762811, l='MpServer', x=-1169,66, y=65,39, z=-618,04]]
+	Retry entities: 0 total; []
+	Server brand: Waterfall <- Paper
+	Server type: Non-integrated multiplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:403)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2706)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:388)
+	at net.minecraft.client.main.Main.main(Main.java:113)
+	at Start.main(Start.java:22)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.8.9
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 1.8.0_392, Amazon.com Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Amazon.com Inc.
+	Memory: 696585424 bytes (664 MB) / 1481637888 bytes (1413 MB) up to 3769630720 bytes (3595 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	Launched Version: MavenMCP
+	LWJGL: 2.9.4
+	OpenGL: AMD Radeon RX 6600 GL version 4.6.0 Compatibility Profile Context 23.11.1.231020, ATI Technologies Inc.
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: No
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	CPU: 8x 12th Gen Intel(R) Core(TM) i3-12100
+	OptiFine Version: OptiFine_1.8.9_HD_U_M5
+	OptiFine Build: ~~NULL~~
+	Render Distance Chunks: 19
+	Mipmaps: 4
+	Anisotropic Filtering: 1
+	Antialiasing: 0
+	Multitexture: false
+	Shaders: null
+	OpenGlVersion: 4.6.0 Compatibility Profile Context 23.11.1.231020
+	OpenGlRenderer: AMD Radeon RX 6600
+	OpenGlVendor: ATI Technologies Inc.
+	CpuCount: 8
