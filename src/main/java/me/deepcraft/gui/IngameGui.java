@@ -7,7 +7,6 @@ import me.deepcraft.utils.ColorUtil;
 import me.deepcraft.utils.fontutil.FontRenderer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
-import net.minecraft.client.gui.GuiIngame;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.renderer.GlStateManager;
 
@@ -23,14 +22,14 @@ public class IngameGui{
     public void draw() {
             GlStateManager.pushMatrix();
             title.drawStringWithShadow(DeepCraft.name + " " + DeepCraft.version, 2, 2, ColorUtil.rainBowEffect(1750000000L, 0.82F).getRGB());
-            text.drawStringWithShadow("§5FPS: §c" + Minecraft.getDebugFPS(), 2, 45, -1);
-            text.drawStringWithShadow("§5XYZ: §c" + (Minecraft.getMinecraft()).thePlayer.getPosition().getX() + " " + (Minecraft.getMinecraft()).thePlayer.getPosition().getY() + " " + (Minecraft.getMinecraft()).thePlayer.getPosition().getZ(), 2, 25, -1);
-            text.drawStringWithShadow("§5IGN: §c" + (mc.thePlayer.getName()),  2, 35, -1);
+            text.drawStringWithShadow("§6FPS: §a" + Minecraft.getDebugFPS(), 2, 45, -1);
+            text.drawStringWithShadow("§6XYZ: §a" + (Minecraft.getMinecraft()).thePlayer.getPosition().getX() + " " + (Minecraft.getMinecraft()).thePlayer.getPosition().getY() + " " + (Minecraft.getMinecraft()).thePlayer.getPosition().getZ(), 2, 25, -1);
+            text.drawStringWithShadow("§6IGN: §a" + (mc.thePlayer.getName()),  2, 35, -1);
             if(!mc.isSingleplayer()) {
-                text.drawStringWithShadow("§5ServerIP: §c" + (mc.getCurrentServerData().serverIP), 2, 55, -1);
-                text.drawStringWithShadow("§5Brand: §c" + mc.thePlayer.getClientBrand(), 2, 65, -1);
-                text.drawStringWithShadow("§5Ping: §a" + mc.getCurrentServerData().pingToServer, 2, 75, -1);
-                text.drawStringWithShadow("§5Protocol: §c" + getVersion(), 2, 85, -1);
+                text.drawStringWithShadow("§6ServerIP: §a" + (mc.getCurrentServerData().serverIP), 2, 55, -1);
+                text.drawStringWithShadow("§6Brand: §a" + mc.thePlayer.getClientBrand(), 2, 65, -1);
+                text.drawStringWithShadow("§6Ping: §a" + mc.getCurrentServerData().pingToServer, 2, 75, -1);
+                text.drawStringWithShadow("§6Protocol: §a" + getVersion(), 2, 85, -1);
             }
             renderArraylist();
             GlStateManager.resetColor();
