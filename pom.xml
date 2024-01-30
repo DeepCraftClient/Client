@@ -44,6 +44,14 @@
             <name>marCloud-Repository</name>
             <url>https://repo.marcloud.net/</url>
         </repository>
+        <repository>
+            <id>viaversion-repo</id>
+            <url>https://repo.viaversion.com</url>
+        </repository>
+        <repository>
+            <id>snakeyml-repo</id>
+            <url>https://mvnrepository.com/artifact/org.yaml/snakeyaml</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -239,8 +247,28 @@
             <artifactId>JDA</artifactId>
             <version>5.0.0-beta.19</version>
         </dependency>
-
-
+        <dependency>
+            <groupId>com.viaversion</groupId>
+            <artifactId>viaversion-api</artifactId>
+            <version>4.9.3-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.viaversion</groupId>
+            <artifactId>viabackwards</artifactId>
+            <version>4.9.2-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.viaversion</groupId>
+            <artifactId>viarewind-common</artifactId>
+            <version>3.0.6-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+            <version>2.2</version>
+        </dependency>
     </dependencies>
 
 </project>
