@@ -21,17 +21,19 @@ package de.florianmichael.viamcp.gui;
 import com.viaversion.viaversion.api.protocol.version.ProtocolVersion;
 import de.florianmichael.vialoadingbase.ViaLoadingBase;
 import de.florianmichael.viamcp.protocolinfo.ProtocolInfo;
+import me.deepcraft.utils.fontutil.FontRenderer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.*;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.EnumChatFormatting;
 
+import java.awt.*;
 import java.io.IOException;
 
 public class GuiProtocolSelector extends GuiScreen {
     private final GuiScreen parent;
     public SlotList list;
-
+    public static me.deepcraft.utils.fontutil.FontRenderer text = new FontRenderer("Arial", 18, Font.PLAIN, true, true);
     public GuiProtocolSelector(GuiScreen parent) {
         this.parent = parent;
     }
@@ -64,7 +66,7 @@ public class GuiProtocolSelector extends GuiScreen {
         GlStateManager.pushMatrix();
         GlStateManager.scale(2.0, 2.0, 2.0);
         String title = EnumChatFormatting.BOLD + "ViaMCP";
-        drawString(this.fontRendererObj, title, (this.width - (this.fontRendererObj.getStringWidth(title) * 2)) / 4, 5, -1);
+        drawString(fontRendererObj, title, (this.width - (this.fontRendererObj.getStringWidth(title) * 2)) / 4, 5, -1);
         GlStateManager.popMatrix();
 
         drawString(this.fontRendererObj, "by EnZaXD/Flori2007", 1, 1, -1);
@@ -77,9 +79,9 @@ public class GuiProtocolSelector extends GuiScreen {
 
         final int fixedHeight = ((5 + this.fontRendererObj.FONT_HEIGHT) * 2) + 2;
 
-        drawString(this.fontRendererObj, EnumChatFormatting.GRAY + (EnumChatFormatting.BOLD + "Version Information"), (width - this.fontRendererObj.getStringWidth("Version Information")) / 2, fixedHeight, -1);
-        drawString(this.fontRendererObj, versionTitle, (width - this.fontRendererObj.getStringWidth(versionTitle)) / 2, fixedHeight + this.fontRendererObj.FONT_HEIGHT, -1);
-        drawString(this.fontRendererObj, versionReleased, (width - this.fontRendererObj.getStringWidth(versionReleased)) / 2, fixedHeight + this.fontRendererObj.FONT_HEIGHT * 2, -1);
+        text.drawString(EnumChatFormatting.GRAY + (EnumChatFormatting.BOLD + "Version Information"), (width - this.fontRendererObj.getStringWidth("Version Information")) / 2, fixedHeight, -1);
+        text.drawString(versionTitle, (width - this.fontRendererObj.getStringWidth(versionTitle)) / 2, fixedHeight + this.fontRendererObj.FONT_HEIGHT, -1);
+        text.drawString(versionReleased, (width - this.fontRendererObj.getStringWidth(versionReleased)) / 2, fixedHeight + this.fontRendererObj.FONT_HEIGHT * 2, -1);
 
         super.drawScreen(mouseX, mouseY, partialTicks);
     }
@@ -113,10 +115,10 @@ public class GuiProtocolSelector extends GuiScreen {
 
         @Override
         protected void drawSlot(int i, int i1, int i2, int i3, int i4, int i5) {
-            drawCenteredString(mc.fontRendererObj,(ViaLoadingBase.getInstance().getTargetVersion().getIndex() == i ? EnumChatFormatting.GREEN.toString() + EnumChatFormatting.BOLD : EnumChatFormatting.GRAY.toString()) + ViaLoadingBase.getProtocols().get(i).getName(), width / 2, i2 + 2, -1);
+            text.drawCenteredString((ViaLoadingBase.getInstance().getTargetVersion().getIndex() == i ? EnumChatFormatting.GREEN.toString() + EnumChatFormatting.BOLD : EnumChatFormatting.GRAY.toString()) + ViaLoadingBase.getProtocols().get(i).getName(), width / 2, i2 + 2, -1);
             GlStateManager.pushMatrix();
             GlStateManager.scale(0.5, 0.5, 0.5);
-            drawCenteredString(mc.fontRendererObj, "PVN: " + ViaLoadingBase.getProtocols().get(i).getVersion(), width, (i2 + 2) * 2 + 20, -1);
+            text.drawCenteredString("PVN: " + ViaLoadingBase.getProtocols().get(i).getVersion(), width, (i2 + 2) * 2 + 20, -1);
             GlStateManager.popMatrix();
         }
     }

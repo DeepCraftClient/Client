@@ -36,8 +36,6 @@ public class GuiConnecting extends GuiScreen
         ServerAddress serveraddress = ServerAddress.fromString(p_i1181_3_.serverIP);
         mcIn.loadWorld((WorldClient)null);
         mcIn.setServerData(p_i1181_3_);
-        DeepCraft.PrevIp = serveraddress.getIP();
-        DeepCraft.PrevPort = serveraddress.getPort();
         this.connect(serveraddress.getIP(), serveraddress.getPort());
     }
 
@@ -46,8 +44,6 @@ public class GuiConnecting extends GuiScreen
         this.mc = mcIn;
         this.previousGuiScreen = p_i1182_1_;
         mcIn.loadWorld((WorldClient)null);
-        DeepCraft.PrevIp = hostName;
-        DeepCraft.PrevPort = port;
         this.connect(hostName, port);
     }
 

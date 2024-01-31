@@ -2,6 +2,7 @@ package net.minecraft.client.gui;
 
 import com.google.common.base.Splitter;
 import com.google.common.collect.Lists;
+import de.florianmichael.viamcp.gui.GuiProtocolSelector;
 import me.deepcraft.gui.ClientOptions;
 import net.minecraft.client.multiplayer.GuiConnecting;
 import net.minecraft.client.multiplayer.ServerData;
@@ -188,17 +189,15 @@ public class GuiMultiplayer extends GuiScreen implements GuiYesNoCallback
             {
                 this.mc.displayGuiScreen(this.parentScreen);
             }
-            else if (button.id == 8)
-            {
+            else if (button.id == 8) {
                 this.refreshServerList();
-
-            if (button.id == 69)
+            }
+            else if (button.id == 69)
             {
-                mc.displayGuiScreen(new ClientOptions(this));
+                this.mc.displayGuiScreen(new GuiProtocolSelector(this));
             }
             }
         }
-    }
 
     public void refreshServerList()
     {
