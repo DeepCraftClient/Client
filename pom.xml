@@ -250,19 +250,19 @@
         <dependency>
             <groupId>com.viaversion</groupId>
             <artifactId>viaversion-common</artifactId>
-            <version>4.9.3-SNAPSHOT</version>
+            <version>LATEST</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.viaversion</groupId>
             <artifactId>viabackwards</artifactId>
-            <version>4.9.2-SNAPSHOT</version>
+            <version>LATEST</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.viaversion</groupId>
             <artifactId>viarewind-common</artifactId>
-            <version>3.0.6-SNAPSHOT</version>
+            <version>LATEST</version>
         </dependency>
         <dependency>
             <groupId>org.yaml</groupId>
