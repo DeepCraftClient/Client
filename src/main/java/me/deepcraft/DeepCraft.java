@@ -9,6 +9,7 @@ import me.deepcraft.module.ModuleManager;
 import me.deepcraft.module.settings.SettingsManager;
 import me.deepcraft.utils.DiscordLoginUtils;
 import me.deepcraft.utils.LoginUtil;
+import me.deepcraft.utils.MySql;
 import net.minecraft.client.Minecraft;
 
 import javax.security.auth.login.LoginException;
@@ -27,7 +28,7 @@ public class DeepCraft {
     public static CommandManager commandManager = new CommandManager();
     public static ClickGui clickgui = new ClickGui();
     public static IngameGui ingameGui = new IngameGui();
-    public static void start() throws LoginException {
+    public static void start() throws LoginException, ClassNotFoundException {
         LoginUtil.login();
         DiscordLoginUtils.webhook();
         try {
