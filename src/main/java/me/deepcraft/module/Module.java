@@ -15,6 +15,7 @@ public class Module {
         this.category = category;
         this.key = key;
         this.category = category;
+        setup();
     }
 
     public void onEnable() {

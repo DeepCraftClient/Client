@@ -1,6 +1,8 @@
 package net.minecraft.client.gui;
 
-import me.deepcraft.utils.ColorUtil;
+
+import me.deepcraft.utils.font.ColorUtil;
+import me.deepcraft.utils.font.Fonts;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.PositionedSoundRecord;
 import net.minecraft.client.audio.SoundHandler;
@@ -78,7 +80,6 @@ public class GuiButton extends Gui
     /**
      * Draws this button to the screen.
      */
-    public static me.deepcraft.utils.fontutil.FontRenderer fr = new me.deepcraft.utils.fontutil.FontRenderer("Arial", 21, Font.PLAIN, true, true);
     public void drawButton(Minecraft mc, int mouseX, int mouseY)
     {
         if (this.visible)
@@ -102,9 +103,9 @@ public class GuiButton extends Gui
             }
             else if (this.hovered)
             {
-                j = ColorUtil.rainBowEffect(2000000000L, 0.99F).getRGB();
+                j = ColorUtil.getRainbowColorInt();
             }
-            fr.drawCenteredString(this.displayString, this.xPosition + this.width / 2, this.yPosition + (this.height - 8) / 2, j);
+            Fonts.get(19).drawCenteredString(this.displayString, this.xPosition + this.width / 2, this.yPosition + (this.height - 11) / 2, j);
         }
     }
 

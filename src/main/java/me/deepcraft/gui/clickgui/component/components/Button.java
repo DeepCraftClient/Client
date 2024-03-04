@@ -10,8 +10,6 @@ import me.deepcraft.gui.clickgui.component.components.sub.ModeButton;
 import me.deepcraft.gui.clickgui.component.components.sub.Slider;
 import me.deepcraft.module.Module;
 import me.deepcraft.module.settings.Setting;
-import me.deepcraft.utils.fontutil.FontRenderer;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 
 import java.awt.*;
@@ -69,9 +67,9 @@ public class Button extends Component {
 	public void renderComponent() {
 		Gui.drawRect(parent.getX() - 1, this.parent.getY() + this.offset, parent.getX() + parent.getWidth() + 1, this.parent.getY() + 13 + this.offset,this.mod.isToggled() ? ClickGui.state : ClickGui.backgroundDark);
 		Gui.drawRect(parent.getX(), this.parent.getY() + this.offset, parent.getX() + parent.getWidth(), this.parent.getY() + 12 + this.offset,this.mod.isToggled() ? ClickGui.state : ClickGui.background);
-		ClickGui.text.drawStringWithShadow(this.mod.getName(), (parent.getX() + 2), (parent.getY() + offset + 3),  -1);
+		ClickGui.text.drawStringWithShadow(this.mod.getName(), (float) (parent.getX() + 2), (float) (parent.getY() + offset),  -1);
 		if(this.subcomponents.size() > 1)
-			ClickGui.text.drawStringWithShadow(this.open ? "-" : "+", (parent.getX() + parent.getWidth() - 10), (parent.getY() + offset + 2), -1);
+			ClickGui.text.drawStringWithShadow(this.open ? "-" : "+", (float) (parent.getX() + parent.getWidth() - 10), (float) (parent.getY() + offset - 1), -1);
 		if(this.open) {
 			if(!this.subcomponents.isEmpty()) {
 				Gui.drawRect(parent.getX() - 1, parent.getY() + this.offset + 12, parent.getX() + parent.getWidth() + 1, parent.getY() + this.offset + ((this.subcomponents.size() + 1) * 12) + 1, ClickGui.backgroundDark);

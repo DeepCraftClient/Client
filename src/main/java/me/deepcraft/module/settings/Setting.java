@@ -11,8 +11,8 @@ public class Setting {
 	private Module parent;
 	private String mode;
 	
-	private String sval;
-	private ArrayList<String> options;
+	private Object sval;
+	private ArrayList<Object> options;
 	
 	private boolean bval;
 	
@@ -22,7 +22,7 @@ public class Setting {
 	private boolean onlyint = false;
 	
 
-	public Setting(String name, Module parent, String sval, ArrayList<String> options){
+	public Setting(String name, Module parent, String sval, ArrayList<Object> options){
 		this.name = name;
 		this.parent = parent;
 		this.sval = sval;
@@ -55,15 +55,15 @@ public class Setting {
 		return parent;
 	}
 	
-	public String getValString(){
+	public Object getValString(){
 		return this.sval;
 	}
 	
-	public void setValString(String in){
+	public void setValString(Object in){
 		this.sval = in;
 	}
 	
-	public ArrayList<String> getOptions(){
+	public ArrayList<Object> getOptions(){
 		return this.options;
 	}
 	

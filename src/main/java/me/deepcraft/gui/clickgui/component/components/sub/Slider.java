@@ -37,7 +37,7 @@ public class Slider extends Component {
 		final int drag = (int)(this.set.getValDouble() / this.set.getMax() * this.parent.parent.getWidth());
 		double fillWidth = ((this.set.getValDouble() - this.set.getMin()) / (this.set.getMax() - this.set.getMin())) * (parent.parent.getWidth() - 4);
 		Gui.drawRect(parent.parent.getX() + 2, parent.parent.getY() + offset, parent.parent.getX() + 2 + (int) fillWidth, parent.parent.getY() + offset + 12, ClickGui.color);
-		ClickGui.text.drawStringWithShadow(this.set.getName() + ": " + this.set.getValDouble() , (parent.parent.getX() + 7), (parent.parent.getY() + offset + 2.75), -1);
+		ClickGui.text.drawStringWithShadow(this.set.getName() + ": " + this.set.getValDouble() , (float) (parent.parent.getX() + 5), (float) (parent.parent.getY() + offset + 2.75), -1);
 	}
 	
 	@Override

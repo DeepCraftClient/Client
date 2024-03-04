@@ -38,7 +38,7 @@ public class ModeButton extends Component {
 	@Override
 	public void renderComponent() {
 		Gui.drawRect(parent.parent.getX(), parent.parent.getY() + offset, parent.parent.getX() + (parent.parent.getWidth() * 1), parent.parent.getY() + offset + 12, ClickGui.backgroundDark);
-		ClickGui.text.drawStringWithShadow(set.getName() + ": " + set.getValString(), (parent.parent.getX() + 7), (parent.parent.getY() + offset + 3), -1);
+		ClickGui.text.drawStringWithShadow(set.getName() + ": " + set.getValString(), (parent.parent.getX() + 7), (parent.parent.getY() + offset + 1), -1);
 	}
 	
 	@Override

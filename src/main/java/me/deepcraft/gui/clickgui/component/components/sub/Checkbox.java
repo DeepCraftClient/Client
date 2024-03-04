@@ -27,7 +27,7 @@ public class Checkbox extends Component {
 	@Override
 	public void renderComponent() {
 		Gui.drawRect(parent.parent.getX(), parent.parent.getY() + offset, parent.parent.getX() + (parent.parent.getWidth() * 1), parent.parent.getY() + offset + 12, ClickGui.backgroundDark);
-		ClickGui.text.drawStringWithShadow(this.op.getName(), (parent.parent.getX() + 2) + 5, (parent.parent.getY() + offset + 3), -1);
+		ClickGui.text.drawStringWithShadow(this.op.getName(), (parent.parent.getX() + 2) + 5, (parent.parent.getY() + offset + 1), -1);
 
 		Gui.drawRect(parent.parent.getX() + 83 + 4, parent.parent.getY() + offset + 3, parent.parent.getX() + 89 + 4, parent.parent.getY() + offset + 9, ClickGui.background);
 		if (this.op.getValBoolean())

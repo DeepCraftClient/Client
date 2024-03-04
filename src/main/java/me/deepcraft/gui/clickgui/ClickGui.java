@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import me.deepcraft.gui.clickgui.component.Component;
 import me.deepcraft.gui.clickgui.component.Frame;
 import me.deepcraft.module.Category;
-import me.deepcraft.utils.fontutil.FontRenderer;
+import me.deepcraft.utils.font.FontRenderer;
+import me.deepcraft.utils.font.Fonts;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.util.ResourceLocation;
@@ -17,7 +18,7 @@ public class ClickGui extends GuiScreen {
 
 	public static ArrayList<Frame> frames;
 	public static int color = 0xFF4848FF, background = 0xFF1F1F1F, backgroundDark = new Color(0, 0, 0, 255).getRGB(), state = new Color(58, 77, 224, 255).getRGB();
-	public static FontRenderer text = new FontRenderer("Arial", 18, Font.PLAIN, true, true);
+	public static FontRenderer text = Fonts.get(20);
 
 	public ClickGui() {
 		frames = new ArrayList<Frame>();

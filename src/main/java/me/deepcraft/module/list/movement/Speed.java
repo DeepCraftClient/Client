@@ -7,7 +7,7 @@ import org.lwjgl.input.Keyboard;
 
 public class Speed extends Module {
     public Speed() {
-        super("Speed", Keyboard.KEY_M, Category.MOVEMENT);
+        super("Speed", Keyboard.KEY_V, Category.MOVEMENT);
     }
 
     @Override
@@ -17,7 +17,7 @@ public class Speed extends Module {
 
     @Override
     public void onEnable() {
-        mc.timer.timerSpeed = 5.67F;
+
     }
 
     @Override

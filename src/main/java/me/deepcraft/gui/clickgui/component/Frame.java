@@ -78,7 +78,7 @@ public class Frame {
 	}
 	public void renderFrame(FontRenderer fontRenderer) {
 		Gui.drawRect(this.x - 1, this.y - 1, this.x + this.width + 1, this.y + this.barHeight + 1, ClickGui.backgroundDark);
-		ClickGui.text.drawString(this.category.name(), (this.x + 2) + 2, (this.y + 3.5f), 0xFFFFFFFF);
+		ClickGui.text.drawString(this.category.name(), (this.x + 2) + 2, (this.y + 0.5f), 0xFFFFFFFF);
 		if(this.open) {
 			if(!this.components.isEmpty()) {
 				//Gui.drawRect(this.x, this.y + this.barHeight, this.x + 1, this.y + this.barHeight + (12 * components.size()), new Color(4, 220, 25, 150).getRGB());

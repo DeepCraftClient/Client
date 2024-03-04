@@ -3,57 +3,65 @@ package me.deepcraft.gui;
 import me.deepcraft.DeepCraft;
 import me.deepcraft.module.Module;
 import me.deepcraft.module.ModuleManager;
-import me.deepcraft.utils.ColorUtil;
-import me.deepcraft.utils.fontutil.FontRenderer;
+import me.deepcraft.utils.font.ColorUtil;
+import me.deepcraft.utils.font.Fonts;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.renderer.GlStateManager;
 
 import java.awt.*;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import static org.lwjgl.opengl.Display.getWidth;
 
 
 public class IngameGui{
     public Minecraft mc = Minecraft.getMinecraft();
-    ScaledResolution sr = new ScaledResolution(mc);
-    public static FontRenderer title = new FontRenderer("Arial", 29, Font.PLAIN, true, true);
-    public static FontRenderer text = new FontRenderer("Arial", 18, Font.PLAIN, true, true);
-    public static FontRenderer arraylist = new FontRenderer("Arial", 26, Font.PLAIN, true, true);
     public void draw() {
+            ScaledResolution sr = new ScaledResolution(mc);
             GlStateManager.pushMatrix();
-            title.drawStringWithShadow(DeepCraft.name + " " + DeepCraft.version, 2, 2, ColorUtil.rainBowEffect(1750000000L, 0.82F).getRGB());
-            text.drawStringWithShadow("§6FPS: §a" + Minecraft.getDebugFPS(), 2, 45, -1);
-            text.drawStringWithShadow("§6XYZ: §a" + (Minecraft.getMinecraft()).thePlayer.getPosition().getX() + " " + (Minecraft.getMinecraft()).thePlayer.getPosition().getY() + " " + (Minecraft.getMinecraft()).thePlayer.getPosition().getZ(), 2, 25, -1);
-            text.drawStringWithShadow("§6IGN: §a" + (mc.thePlayer.getName()),  2, 35, -1);
+            Fonts.get(31).drawStringWithShadow(DeepCraft.name + " " + DeepCraft.version, 2, 2, ColorUtil.getRainbowColorInt());
+            Fonts.get(20).drawStringWithShadow("FPS: " + Minecraft.getDebugFPS(), 2, 45, -1);
+            Fonts.get(20).drawStringWithShadow("XYZ: " + (Minecraft.getMinecraft()).thePlayer.getPosition().getX() + " " + (Minecraft.getMinecraft()).thePlayer.getPosition().getY() + " " + (Minecraft.getMinecraft()).thePlayer.getPosition().getZ(), 2, 25, -1);
+            Fonts.get(20).drawStringWithShadow("IGN: " + (mc.thePlayer.getName()),  2, 35, -1);
             if(!mc.isSingleplayer()) {
-                text.drawStringWithShadow("§6ServerIP: §a" + (mc.getCurrentServerData().serverIP), 2, 55, -1);
-                text.drawStringWithShadow("§6Brand: §a" + mc.thePlayer.getClientBrand(), 2, 65, -1);
-                text.drawStringWithShadow("§6Ping: §a" + mc.getCurrentServerData().pingToServer, 2, 75, -1);
-                text.drawStringWithShadow("§6Protocol: §a" + getVersion(), 2, 85, -1);
+                Fonts.get(20).drawStringWithShadow("ServerIP: " + (mc.getCurrentServerData().serverIP), 2, 55, -1);
+                Fonts.get(20).drawStringWithShadow("Brand: " + mc.thePlayer.getClientBrand(), 2, 65, -1);
+                Fonts.get(20).drawStringWithShadow("Ping: " + mc.getCurrentServerData().pingToServer, 2, 75, -1);
+                Fonts.get(20).drawStringWithShadow("Protocol: " + getVersion(), 2, 85, -1);
             }
             renderArraylist();
             GlStateManager.resetColor();
             GlStateManager.popMatrix();
         }
-    public void renderArraylist() {
-        int y = 0;
-        for (Module m : ModuleManager.getModules()) {
-            if (m.isToggled()) {
-                int stringWidth = arraylist.getStringWidth(m.getName());
-                Gui.drawRect(sr.getScaledWidth() - stringWidth - 8, y, sr.getScaledWidth(), y + 15, new Color(0, 0, 0, 205).getRGB());
-                arraylist.drawStringWithShadow(m.getName(), sr.getScaledWidth() - stringWidth - 3.5f, y + 1, ColorUtil.rainBowEffect(2000000000L, 0.95F).getRGB());
-                int blueBoxWidth = 4;
-                int blueBoxHeight = 14;
-                int blueBoxX = sr.getScaledWidth() - stringWidth - blueBoxWidth - 8;
-                int blueBoxY = y;
-                Gui.drawRect(blueBoxX, blueBoxY, blueBoxX + blueBoxWidth, blueBoxY + blueBoxHeight,  new Color(0, 115, 255, 205).getRGB());
 
-                y += 15;
-            }
+    public void renderArraylist() {
+        ScaledResolution sr = new ScaledResolution(mc);
+        List<Module> modules = ModuleManager.getModules().stream()
+                .filter(Module::isToggled)
+                .sorted(Comparator.comparingInt(m -> -Fonts.get(26).getStringWidth(m.getName())))
+                .collect(Collectors.toList());
+
+        int y = 1;
+        int relativeYOffset = 3;
+        int offset = 26 / 2 + relativeYOffset;
+
+        for (Module module : modules) {
+            String s = module.getName();
+            int mWidth = Fonts.get(26).getStringWidth(s);
+
+            int textX = sr.getScaledWidth() - mWidth;
+
+            Gui.drawRect(textX, y - 1, sr.getScaledWidth(), y + offset, new Color(0, 0, 0, 100).getRGB());
+
+            Fonts.get(26).drawString(s, textX, y, ColorUtil.getRainbowColorInt());
+
+            y += offset + 1;
         }
     }
-
-
 
     public String getVersion() {
         int version = mc.getCurrentServerData().version;

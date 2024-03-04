@@ -32,7 +32,7 @@ public class Keybind extends Component {
 	public void renderComponent() {
 		Gui.drawRect(parent.parent.getX(), parent.parent.getY() + offset, parent.parent.getX() + (parent.parent.getWidth() * 1), parent.parent.getY() + offset + 12, ClickGui.backgroundDark);
 		//Gui.drawRect(parent.parent.getX(), parent.parent.getY() + offset, parent.parent.getX() + 2, parent.parent.getY() + offset + 12, 0xFF111111);
-		ClickGui.text.drawStringWithShadow(binding ? "Listening..." : ("Key: " + Keyboard.getKeyName(this.parent.mod.getKey())), (parent.parent.getX() + 7), (parent.parent.getY() + offset + 2.75) , -1);
+		ClickGui.text.drawStringWithShadow(binding ? "Listening..." : ("Key: " + Keyboard.getKeyName(this.parent.mod.getKey())), (float) (parent.parent.getX() + 7), (float) (parent.parent.getY() + offset + 0.5), -1);
 	}
 	
 	@Override

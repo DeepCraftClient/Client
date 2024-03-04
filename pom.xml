@@ -56,6 +56,13 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.newdawn</groupId>
+            <artifactId>slick</artifactId>
+            <version>1.0.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/org/newdawn/slick/1.0.0/slick-1.0.0.jar</systemPath>
+        </dependency>
+        <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
             <version>4.0.23.Final</version>

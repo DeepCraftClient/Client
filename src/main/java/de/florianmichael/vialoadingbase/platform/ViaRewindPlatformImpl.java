@@ -34,4 +34,9 @@ public class ViaRewindPlatformImpl implements ViaRewindPlatform {
     public Logger getLogger() {
         return ViaLoadingBase.LOGGER;
     }
+
+    @Override
+    public File getDataFolder() {
+        return null;
+    }
 }
