@@ -14,7 +14,6 @@ public class Module {
         this.name = name;
         this.category = category;
         this.key = key;
-        this.category = category;
         setup();
     }
 
